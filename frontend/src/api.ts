@@ -1,4 +1,5 @@
-import type { Greeting } from '@shared/types'
+
+import type { Greeting,WeatherData } from '@shared/types'
 import env from './env'
 
 export async function getGreeting () {
@@ -7,3 +8,11 @@ export async function getGreeting () {
 
   return result
 }
+
+export async function fetchWeather() {
+  const response = await fetch(`${env.serverUrl}/`)
+  const result = await response.json() as WeatherData
+
+  return result
+}
+
