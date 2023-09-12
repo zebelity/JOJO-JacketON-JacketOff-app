@@ -41,4 +41,85 @@ export type WeatherData = {
     gust_mph: number
     gust_kph: number
   }
+  forecast: {
+    forecastday: [
+      {
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      },
+      {
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      },
+      {
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      },{
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      },
+      {
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      },
+      {
+        date: string
+        date_epoch: number
+        day: {
+          avgtemp_c: number
+          avgtemp_f: number
+          condition: {
+            text: string
+            icon: string
+            code: number
+          }
+        }
+      }
+    ]
+  }
 }

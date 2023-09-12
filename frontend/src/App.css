@@ -2,41 +2,48 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  box-sizing: border-box;
+}
+
+h1 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.mainicon {
+  height: 100px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-wrap {
+  display: flex;
+  justify-content: center; /* Horizontally center the child elements */
+  align-items: center; /* Vertically center the child elements */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.wrap-icon {
+  text-align: center; /* Center the contents horizontally */
+  margin: 0 30px; /* Add some margin between the icons */
+  padding: 20px;
 }
 
-.card {
-  padding: 2em;
+.icon-container {
+  height: 80px;
 }
 
-.read-the-docs {
-  color: #888;
+.forecast-weather {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; /* Center the content vertically */
+}
+
+/* Style each forecast card */
+.forecast-card {
+  text-align: center;
+}
+
+.forecast-card img {
+  max-width: 100px; /* Limit the image width */
+}
+
+.forecast-card p {
+  margin: 8px 0; /* Add some vertical spacing between elements */
 }

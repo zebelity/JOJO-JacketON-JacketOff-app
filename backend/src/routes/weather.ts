@@ -22,10 +22,11 @@ router.get('/', async (req: Request, res: Response) => {
       //console.log({ userIpAddress })
 
       // Make a request to the weather API with the user's IP address
-      const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
+      const response = await axios.get('https://api.weatherapi.com/v1/forecast.json', {
         params: {
           key: process.env.WEATHER_API_KEY,
           q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev
+          days: 6
         },
       });
       const weatherData = response.data;
@@ -40,6 +41,7 @@ router.get('/', async (req: Request, res: Response) => {
       params: { 
         key: process.env.WEATHER_API_KEY,
         q: location,
+        days: 6
       },
     });
 
