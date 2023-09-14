@@ -1,25 +1,22 @@
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Homepage from 'pages/Homepage'
-import Alert from 'components/Alert'
-import Location from 'components/Location'
-import Today from 'components/Today'
-import Setting from 'components/Setting'
+import Location from 'pages/Location'
+import Today from 'pages/Today'
+import Setting from 'pages/Setting'
+
 
 export default function App () {
 
   return (
-    <>
-    <section className='top-content'>
-      < Alert />
-    </section>
-    < Homepage />
-    <section className='footer-content'>
-      < Location />
-      < Today />
-      < Setting />
-
-    </section>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/today" element={<Today />} />
+        <Route path="/setting" element={<Setting />} />
+      </Routes>
+    </Router>
   )
 }

@@ -3,6 +3,6 @@
 export default function Setting() {
 
   return (
-    <h2>Setting</h2>
+    <h3>setting page</h3>
   )
 }

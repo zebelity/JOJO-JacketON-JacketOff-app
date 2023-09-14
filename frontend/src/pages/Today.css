@@ -1,0 +1,23 @@
+.today-content {
+  background-color: gray; /* Set the background color to gray */
+  padding: 16px; /* Add padding to create some space around the content */
+}
+
+.wraptop-today {
+  display: flex;
+  justify-content: space-between; /* Center horizontally */
+  align-items: flex-start; /* Align items to the top */
+  gap: 24px; /* Add some space between items */
+  max-width: 1280px; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 16px; /* Add padding to the content */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.home-icon {
+  align-self: flex-start; /* Align the home icon to the top */
+}
+
+h2 {
+  margin: 0; /* Remove default margin on h2 */
+}

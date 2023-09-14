@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { WeatherProvider } from 'WeatherContext.tsx';
+// import { BrowserRouter } from 'react-router-dom';
 
 const root = document.getElementById('root');
 const reactRoot = createRoot(root);
@@ -10,7 +11,9 @@ const reactRoot = createRoot(root);
 reactRoot.render(
   <React.StrictMode>
     <WeatherProvider>
-      <App />
+   
+        <App />
+      
     </WeatherProvider>
   </React.StrictMode>
 );

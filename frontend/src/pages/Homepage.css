@@ -1,42 +1,42 @@
 h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
   text-align: center;
 }
 
-.mainicon {
-  height: 100px;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-.weather-wrap {
+.content {
   display: flex;
-  justify-content: center; /* Horizontally center the child elements */
-  align-items: center; /* Vertically center the child elements */
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
-.wrap-icon {
+.weather-section {
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.footer-content {
+  position: absolute; /* Change to absolute positioning */
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footer-card {
   text-align: center; /* Center the contents horizontally */
   margin: 0 30px; /* Add some margin between the icons */
   padding: 20px;
 }
 
-.icon-container {
-  height: 80px;
-}
-
-.forecast-weather {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; /* Center the content vertically */
-}
-
-/* Style each forecast card */
-.forecast-card {
-  text-align: center;
-}
-
-.forecast-card img {
-  max-width: 100px; /* Limit the image width */
-}
-
-.forecast-card p {
-  margin: 8px 0; /* Add some vertical spacing between elements */
+.icon-footer {
+  height: 10px;
 }

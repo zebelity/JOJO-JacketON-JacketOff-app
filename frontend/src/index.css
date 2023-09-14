@@ -22,31 +22,12 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
 }
-
-.content {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.weather-section {
-  width: 100%;
-  box-sizing: border-box; 
-}
-
 
 .code {
   font-family:'Courier New', Courier, monospace;

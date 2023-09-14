@@ -1,0 +1,19 @@
+.mainicon {
+  height: 100px;
+}
+
+.weather-wrap {
+  display: flex;
+  justify-content: center; /* Horizontally center the child elements */
+  align-items: center; /* Vertically center the child elements */
+}
+
+.wrap-icon {
+  text-align: center; /* Center the contents horizontally */
+  margin: 0 30px; /* Add some margin between the icons */
+  padding: 20px;
+}
+
+.icon-container {
+  height: 80px;
+}
