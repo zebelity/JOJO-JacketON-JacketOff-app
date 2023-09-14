@@ -1,7 +1,3 @@
-export type Greeting = {
-  message: string
-}
-
 export type WeatherData = {
   location: {
     name: string
@@ -119,6 +115,22 @@ export type WeatherData = {
             code: number
           }
         }
+      }
+    ]
+  }
+  alerts: {
+    alert: [
+      {
+        headline: string
+        areas: string
+        event: string
+        instruction: string
+      },
+      {
+        headline: string
+        areas: string
+        event: string
+        instruction: string
       }
     ]
   }

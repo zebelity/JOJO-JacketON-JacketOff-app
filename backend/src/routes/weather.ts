@@ -16,6 +16,7 @@ router.get('/', async (req: Request, res: Response) => {
     const userIpAddress = req.ip
 
     let location = req.query.location;
+    // location = 'boston'
     if (location === undefined) {
       // Use the user's IP address for IP lookup
       
@@ -26,7 +27,8 @@ router.get('/', async (req: Request, res: Response) => {
         params: {
           key: process.env.WEATHER_API_KEY,
           q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev
-          days: 6
+          days: 6,
+          alerts: 'yes'
         },
       });
       const weatherData = response.data;
@@ -36,12 +38,13 @@ router.get('/', async (req: Request, res: Response) => {
 
     // If the location is not "auto:ip," assume it's a city or location name
     // Continue with the existing logic to fetch weather based on the specified location
-
+    
     const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
       params: { 
         key: process.env.WEATHER_API_KEY,
         q: location,
-        days: 6
+        days: 6,
+        alerts: 'yes'
       },
     });
 
