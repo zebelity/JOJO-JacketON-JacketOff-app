@@ -1,15 +1,15 @@
 import { useContext } from 'react'
-import { WeatherContext } from 'WeatherContext.tsx';
+import { WeatherContext } from 'WeatherContext.tsx'
 import './CurrentWeather.css'
 
-export default function CurrentWeather() {
-
-  const { weather } = useContext(WeatherContext);
+export default function CurrentWeather () {
+  const { weather } = useContext(WeatherContext)
 
   const currentWeather = weather?.current
   return (
     <div className='weather-section current-weather'>
-      {weather ? (
+      {weather
+        ? (
         <div>
           <img className='mainicon' src={currentWeather?.condition.icon} alt="icon" />
           <h2> {weather.location.name} </h2>
@@ -33,11 +33,11 @@ export default function CurrentWeather() {
               </div>
               <p>{currentWeather?.wind_mph} km/h</p>
             </div>
-            
+
           </div>
         </div>
-      ):
-      <p className='code'>Loading weather data...</p>}
+          )
+        : <p className='code'>Loading weather data...</p>}
     </div>
   )
 }

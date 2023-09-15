@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
+// import { testData } from '../util/test-data';
 
 dotenv.config();
 
@@ -10,13 +11,17 @@ function isLocalIp (ip: string): boolean {
   return ip === '::1' || ip === '127.0.0.1'
 }
 
+// router.get('/test', async (req: Request, res: Response) => {
+//   res.json(testData)
+// })
+
 router.get('/', async (req: Request, res: Response) => {
   // console.log(process.env.WEATHER_API_KEY)
   try {
     const userIpAddress = req.ip
 
     let location = req.query.location;
-    // location = 'boston'
+    location = 'boston'
     if (location === undefined) {
       // Use the user's IP address for IP lookup
       
@@ -39,7 +44,7 @@ router.get('/', async (req: Request, res: Response) => {
     // If the location is not "auto:ip," assume it's a city or location name
     // Continue with the existing logic to fetch weather based on the specified location
     
-    const response = await axios.get('https://api.weatherapi.com/v1/current.json', {
+    const response = await axios.get('https://api.weatherapi.com/v1/forecast.json', {
       params: { 
         key: process.env.WEATHER_API_KEY,
         q: location,
@@ -50,7 +55,41 @@ router.get('/', async (req: Request, res: Response) => {
 
     const weatherData = response.data;
     console.log({ weatherData });
-    res.json(weatherData);
+    return res.json(weatherData);
+  } catch (error) {
+    console.error((error as Error).message);
+    res.status(500).json({ error: 'An error occurred while fetching weather data.' });
+  }
+})
+
+router.get('/today', async (req: Request, res: Response) => {
+  try {
+    const userIpAddress = req.ip
+
+    let location = req.query.location;
+
+    if (location === undefined) {
+      const response = await axios.get('https://api.weatherapi.com/v1/astronomy.json', {
+        params: {
+          key: process.env.WEATHER_API_KEY,
+          q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev
+        },
+      });
+      const weatherData = response.data;
+      console.log({ weatherData });
+      return res.json(weatherData);
+    }
+
+    const response = await axios.get('https://api.weatherapi.com/v1/astronomy.json', {
+      params: { 
+        key: process.env.WEATHER_API_KEY,
+        q: location,
+      },
+    });
+
+    const weatherData = response.data;
+    console.log({ weatherData });
+    return res.json(weatherData);
   } catch (error) {
     console.error((error as Error).message);
     res.status(500).json({ error: 'An error occurred while fetching weather data.' });

@@ -1,3 +1,17 @@
+export type WeatherForecastDay = {
+  date: string
+  date_epoch: number
+  day: {
+    avgtemp_c: number
+    avgtemp_f: number
+    condition: {
+      text: string
+      icon: string
+      code: number
+    }
+  }
+}
+
 export type WeatherData = {
   location: {
     name: string
@@ -38,100 +52,34 @@ export type WeatherData = {
     gust_kph: number
   }
   forecast: {
+    // 6 days - today + 5 day forecast
     forecastday: [
-      {
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      },
-      {
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      },
-      {
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      },{
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      },
-      {
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      },
-      {
-        date: string
-        date_epoch: number
-        day: {
-          avgtemp_c: number
-          avgtemp_f: number
-          condition: {
-            text: string
-            icon: string
-            code: number
-          }
-        }
-      }
+      WeatherForecastDay,
+      WeatherForecastDay,
+      WeatherForecastDay,
+      WeatherForecastDay,
+      WeatherForecastDay,
+      WeatherForecastDay
     ]
   }
   alerts: {
-    alert: [
-      {
-        headline: string
-        areas: string
-        event: string
-        instruction: string
-      },
-      {
-        headline: string
-        areas: string
-        event: string
-        instruction: string
-      }
-    ]
+    alert: Array<{
+      headline: string
+      areas: string
+      event: string
+      instruction: string
+    }>
+  }
+}
+
+export type TodayData = {
+  location: {
+    name: string
+  },
+  astronomy: {
+    astro: {
+      sunrise: string
+      sunset: string
+    }
   }
 }

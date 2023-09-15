@@ -1,16 +1,36 @@
 import './Homepage.css'
-import Alert from 'components/Alert'
-import CurrentWeather from 'components/CurrentWeather';
-import ForecastWeather from 'components/ForecastWeather';
-import { Link } from 'react-router-dom';
+import CurrentWeather from 'components/CurrentWeather'
+import ForecastWeather from 'components/ForecastWeather'
+import { Link } from 'react-router-dom'
+import { useState,useContext } from 'react'
+import { WeatherContext } from 'WeatherContext.tsx'
 
-export default function Homepage(){
+export default function Homepage () {
+
+  const { weather } = useContext(WeatherContext)
+
+  const alertWeather = weather?.alerts?.alert
+  const shouldShowAlertIcon = alertWeather?.length > 0
 
   return (
     <>
-      <section className='top-content'>
-        < Alert />
+      <section className='top-content'> 
+        <header className='app-header'>
+          <div className='logo'>
+            <img src="./public/logo.png" alt="logo" />
+          </div>
+          {shouldShowAlertIcon && (
+            <Link to="/alert">
+            <div className='alert-icon'>
+              <button  className='aleart-btn'>
+                <img src="./public/alert.png" alt="alert" />
+              </button>
+            </div>
+            </Link>
+          )}
+        </header>
       </section>
+
       <h1>JOJO App</h1>
       <div className='content'>
         < CurrentWeather/>
@@ -39,7 +59,7 @@ export default function Homepage(){
               </div>
               <h4>Setting</h4>
             </div>
-          </Link>   
+          </Link>
         </section>
       </div>
     </>
