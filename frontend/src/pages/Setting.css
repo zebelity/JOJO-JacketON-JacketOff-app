@@ -1,0 +1,38 @@
+.setting-section {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  text-align: center;
+}
+
+.wraptop-today {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #d3d3d3;
+  margin-top: 0;
+  padding: 0px;
+}
+
+.home-icon img {
+  width: 40px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.setting-card h3 {
+  text-align: start;
+  margin-bottom: 5px;
+}
+
+.set-info {
+  display: flex;
+  justify-content: start;
+  align-items: center; 
+  border: solid 1px black; 
+}
+
+.setting-icon {
+  margin-left: 10px;
+  margin-right: 20px;
+}

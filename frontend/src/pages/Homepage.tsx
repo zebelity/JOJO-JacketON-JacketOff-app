@@ -2,7 +2,7 @@ import './Homepage.css'
 import CurrentWeather from 'components/CurrentWeather'
 import ForecastWeather from 'components/ForecastWeather'
 import { Link } from 'react-router-dom'
-import { useState,useContext } from 'react'
+import { useContext } from 'react'
 import { WeatherContext } from 'WeatherContext.tsx'
 
 export default function Homepage () {
@@ -13,7 +13,7 @@ export default function Homepage () {
   const shouldShowAlertIcon = alertWeather?.length > 0
 
   return (
-    <>
+    <div className='homepage'>
       <section className='top-content'> 
         <header className='app-header'>
           <div className='logo'>
@@ -62,6 +62,6 @@ export default function Homepage () {
           </Link>
         </section>
       </div>
-    </>
+    </div>
   )
 }

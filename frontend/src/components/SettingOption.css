@@ -1,0 +1,19 @@
+.settingOption {
+
+}
+.goback-icon {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 20px;
+}
+
+.goback-icon img {
+  border-radius: 50%;
+  background-color: rgb(184, 182, 182);
+  padding: 10px;
+}
+
+.setting-box {
+
+}

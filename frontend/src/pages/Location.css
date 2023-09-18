@@ -1,0 +1,52 @@
+.location-section {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  text-align: center;
+}
+
+.wraptop-today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  margin-top: 0;
+  padding: 0px;
+}
+
+.home-icon img {
+  width: 40px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.wraptop-today h2 { 
+  text-align: start;
+  flex-grow: 1;
+}
+
+.plus-icon {
+  margin-right: 10px;
+}
+
+.info-location {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px black;
+  padding-left: 10px;
+}
+
+.location-card p {
+  text-align: center; 
+  flex-grow: 1; /* Allow the p tag to take up all available space between icons */
+}
+
+.trash-icon {
+  margin-right: 10px;
+}

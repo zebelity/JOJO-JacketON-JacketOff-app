@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
-// import { testData } from '../util/test-data';
+
 
 dotenv.config();
 
@@ -11,17 +11,13 @@ function isLocalIp (ip: string): boolean {
   return ip === '::1' || ip === '127.0.0.1'
 }
 
-// router.get('/test', async (req: Request, res: Response) => {
-//   res.json(testData)
-// })
-
 router.get('/', async (req: Request, res: Response) => {
   // console.log(process.env.WEATHER_API_KEY)
   try {
     const userIpAddress = req.ip
 
     let location = req.query.location;
-    location = 'boston'
+    // location = 'boston' //to test alert
     if (location === undefined) {
       // Use the user's IP address for IP lookup
       
@@ -72,7 +68,7 @@ router.get('/today', async (req: Request, res: Response) => {
       const response = await axios.get('https://api.weatherapi.com/v1/astronomy.json', {
         params: {
           key: process.env.WEATHER_API_KEY,
-          q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev
+          q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev 
         },
       });
       const weatherData = response.data;

@@ -9,8 +9,8 @@
 }
 
 .wrap-icon {
-  text-align: center; /* Center the contents horizontally */
-  margin: 0 30px; /* Add some margin between the icons */
+  text-align: center;
+  margin: 0 30px; 
   padding: 20px;
 }
 

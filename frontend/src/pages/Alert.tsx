@@ -24,7 +24,7 @@ export default function Alert () {
         <div className='alert-content' key={index}>
           <h3>{alert.event}</h3>
           <p>{alert.headline}</p>
-          <p>At {alert.areas}</p>
+          <p>{alert.areas}</p>
           <p>{alert.instruction}</p>
         </div>
       ))

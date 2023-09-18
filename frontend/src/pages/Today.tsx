@@ -29,9 +29,10 @@ export default function Today () {
   const formattedDate = formatDate(now);
   //console.log(formattedDate); // Output: Tue, 5 Sep 2023
   
+const uvIndex = Number(currentWeather?.uv).toFixed(1)
 
   return (
-    <div className="today-section">
+    <section className="today-section">
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
@@ -55,16 +56,50 @@ export default function Today () {
           </div>
         </div>
         <div className='astro-data'>
-          <p>Sunrise</p>
-          <h3>{todayAstro?.astronomy.astro.sunrise}</h3>
-          <p>Sunset</p>
-          <h3>{todayAstro?.astronomy.astro.sunset}</h3>
+          <div className='sunrise-card'>
+            <h3>Sunrise</h3>
+            <p>{todayAstro?.astronomy.astro.sunrise}</p>
+            <div className='astro-icon'>
+              <img src="/public/sunrise.png" alt="sunrise" />
+            </div>
+          </div>
+          <div className='sunset-card'>
+            <h3>Sunset</h3>
+            <p>{todayAstro?.astronomy.astro.sunset}</p>
+            <div className='astro-icon'>
+              <img src="/public/sunset.png" alt="sunset" />
+            </div>
+          </div>
         </div>
+        <div className='info-data'>
+          <div className='info-card'>
+              <div className='info-icon'>
+                <img src="/public/uvindex.png" alt="uv" />
+              </div>
+              <h3>UV Index</h3>
+              <p>{uvIndex}</p>
+          </div>
+          <div className='info-card'>
+              <div className='info-icon'>
+                <img src="/public/humidity.png" alt="humidity" />
+              </div>
+              <h3>Humidity</h3>
+              <p>{currentWeather?.humidity}</p>
+          </div>
+          <div className='info-card'>
+              <div className='info-icon'>
+                <img src="/public/wind2.png" alt="wind" />
+              </div>
+              <h3>Wind</h3>
+              <p>{currentWeather?.wind_mph} km/h</p>
+          </div>
+        </div>
+
         </>
           )
         : <p className='code'>Loading weather data...</p>}
       </section>
 
-    </div>
+    </section>
   )
 }

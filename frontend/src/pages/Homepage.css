@@ -1,3 +1,5 @@
+
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -17,7 +19,7 @@
 
 .alert-icon a {
   text-decoration: none; 
-  color: inherit; /* Inherit text color from parent */
+  
 }
 
 .aleart-btn {
@@ -57,17 +59,16 @@ a {
 }
 
 .footer-content {
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
   bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .footer-card {
-  text-align: center; /* Center the contents horizontally */
-  margin: 0 30px; /* Add some margin between the icons */
+  text-align: center;
+  margin: 0 30px;
   padding: 20px;
 }
 

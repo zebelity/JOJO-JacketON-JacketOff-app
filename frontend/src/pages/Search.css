@@ -1,6 +1,8 @@
-.alert-section {
+.search-section {
   display: flex;
   flex-direction: column;
+  width: 450px;
+  text-align: center;
 }
 
 .wraptop-today {
@@ -12,14 +14,8 @@
   padding: 0px;
 }
 
-.home-icon img {
+.back-icon img {
   width: 40px;
   margin-right: 20px;
   margin-left: 10px;
 }
-
-.alert-content {
-  align-items: center;
-  width: 450px;
-}
-

@@ -5,6 +5,7 @@ import Location from 'pages/Location'
 import Today from 'pages/Today'
 import Setting from 'pages/Setting'
 import Alert from 'pages/Alert'
+import Search from 'pages/Search'
 
 export default function App () {
   return (
@@ -15,6 +16,7 @@ export default function App () {
         <Route path="/location" element={<Location />} />
         <Route path="/today" element={<Today />} />
         <Route path="/setting" element={<Setting />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </Router>
   )
