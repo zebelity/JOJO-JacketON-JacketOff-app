@@ -25,7 +25,7 @@ export default function Today () {
     return new Intl.DateTimeFormat('en-US', options).format(date);
   }
   
-  const now = new Date(); // Replace this with your date
+  const now = new Date();
   const formattedDate = formatDate(now);
   //console.log(formattedDate); // Output: Tue, 5 Sep 2023
   

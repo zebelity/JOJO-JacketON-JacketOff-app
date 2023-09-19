@@ -3,31 +3,30 @@ import { useContext, useState, useEffect } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
 import { LocationContext } from "contexts/LocationContext"
 import { Link } from 'react-router-dom'
-import { fetchLocation } from "api.ts"
-import { LocationData } from "@shared/types"
-
 
 export default function Location () {
 
   const { weather } = useContext(WeatherContext)
-  const { selectedLocation,setSelectedLocation } = useContext(LocationContext)
-  
+  const { setSelectedLocation } = useContext(LocationContext)
+
+  const [selectedLocations, setSelectedLocations] = useState([]);
+
+  const location = weather?.location
+
   useEffect(() => {
-    // Load the selected location from localStorage
-    const storedLocation = localStorage.getItem('selectedLocation');
-  
-    if (storedLocation) {
-      // Parse the JSON string back to an object
-      const parsedLocation = JSON.parse(storedLocation);
-      
-      // Set the selected location in your context
-      setSelectedLocation(parsedLocation);
-    }
+    const storedLocations = JSON.parse(localStorage.getItem('selectedLocations')) || [];
+    setSelectedLocations(storedLocations);
   }, []);
   
 
+  function handleDeleteLocation(index) {
+    const updatedLocations = [...selectedLocations];
+    updatedLocations.splice(index,1)
+
+    setSelectedLocations(updatedLocations)
+    localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))
+  }
   
-  const location = weather?.location
 
   return (
     <section className="location-section">
@@ -51,13 +50,14 @@ export default function Location () {
           </div>
           <p>{location?.name} - {location?.country}</p>
         </div>
-        <div className="location-card" onClick={() => handleLocationCardClick(selectedLocation)}>
-          
-          <p>{selectedLocation?.name} - {selectedLocation?.country}</p>
-          <div className="trash-icon">
-            <img src="/public/trash.png" alt="trash" />
+        {selectedLocations.map((selectedLocation, index) => (
+          <div className="location-card" key={index} >
+            <p>{selectedLocation.name} - {selectedLocation.country}</p>
+            <div className="trash-icon" onClick={() => handleDeleteLocation(index)}>
+              <img src="/public/trash.png" alt="trash" />
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
     

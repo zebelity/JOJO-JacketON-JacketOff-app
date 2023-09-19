@@ -28,7 +28,11 @@ export default function Search() {
 
   function handleLocationSelection (selectedLocation) {
     console.log({selectedLocation})
-    localStorage.setItem('selectedLocation', JSON.stringify(selectedLocation))
+    const allSelectedLocation = JSON.parse(localStorage.getItem('selectedLocations')) || [];
+
+    allSelectedLocation.push(selectedLocation);
+
+    localStorage.setItem('selectedLocations', JSON.stringify(allSelectedLocation))
     setSelectedLocation(selectedLocation)
 
     window.location = '/location'
@@ -61,7 +65,6 @@ export default function Search() {
       <div className="search-result">
         <ul>
         {searchResults.map((location) => (
-          
           <li key={location.id} onClick={() => handleLocationSelection(location)}>
             {location.name} - {location.country}
           </li>
