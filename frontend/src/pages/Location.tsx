@@ -1,17 +1,31 @@
 import "./Location.css"
 import { useContext, useState, useEffect } from 'react'
-import { WeatherContext } from 'WeatherContext.tsx'
+import { WeatherContext } from 'contexts/WeatherContext'
+import { LocationContext } from "contexts/LocationContext"
 import { Link } from 'react-router-dom'
+import { fetchLocation } from "api.ts"
+import { LocationData } from "@shared/types"
 
 
 export default function Location () {
 
   const { weather } = useContext(WeatherContext)
-  const [selectedLocation, setSelectedLocation] = useState(null);
+  const { selectedLocation,setSelectedLocation } = useContext(LocationContext)
+  
+  useEffect(() => {
+    // Load the selected location from localStorage
+    const storedLocation = localStorage.getItem('selectedLocation');
+  
+    if (storedLocation) {
+      // Parse the JSON string back to an object
+      const parsedLocation = JSON.parse(storedLocation);
+      
+      // Set the selected location in your context
+      setSelectedLocation(parsedLocation);
+    }
+  }, []);
+  
 
-  const handleLocationCardClick = (clickedLocation) => {
-    setSelectedLocation(clickedLocation);
-  };
   
   const location = weather?.location
 
@@ -37,9 +51,9 @@ export default function Location () {
           </div>
           <p>{location?.name} - {location?.country}</p>
         </div>
-        <div className="location-card" onClick={() => handleLocationCardClick(location)}>
+        <div className="location-card" onClick={() => handleLocationCardClick(selectedLocation)}>
           
-          <p>Bangkok - Thailand</p>
+          <p>{selectedLocation?.name} - {selectedLocation?.country}</p>
           <div className="trash-icon">
             <img src="/public/trash.png" alt="trash" />
           </div>

@@ -1,6 +1,6 @@
 import './Today.css'
 import { useContext, useState, useEffect } from 'react'
-import { WeatherContext } from 'WeatherContext.tsx'
+import { WeatherContext } from 'contexts/WeatherContext'
 import { fetchTodayWeather } from 'api.ts'
 import { TodayData } from '@shared/types'
 import { Link } from 'react-router-dom'

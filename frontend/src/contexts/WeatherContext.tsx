@@ -1,6 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react'
 import { WeatherData } from '@shared/types'
-import { fetchWeather } from './api.ts'
+import { fetchWeather } from '../api.ts'
 
 interface WeatherContextType {
   weather: WeatherData | null;

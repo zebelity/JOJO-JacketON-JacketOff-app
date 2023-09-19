@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { WeatherContext } from 'WeatherContext.tsx'
+import { WeatherContext } from 'contexts/WeatherContext'
 import { Link } from 'react-router-dom';
 import './Alert.css'
 
