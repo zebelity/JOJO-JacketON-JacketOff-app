@@ -1,4 +1,4 @@
-import type { WeatherData,TodayData, LocationData } from '@shared/types'
+import type { WeatherData, TodayData, LocationData } from '@shared/types'
 import env from './env'
 
 export async function fetchWeather () {
@@ -17,7 +17,7 @@ export async function fetchTodayWeather () {
 
 export async function fetchLocation (q: string) {
   const response = await fetch(`${env.serverUrl}/search?q=${q}`)
-  const result = await response.json() as LocationData
+  const result = await response.json() as LocationData[]
 
   return result
-} 
+}

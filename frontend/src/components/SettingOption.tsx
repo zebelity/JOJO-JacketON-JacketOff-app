@@ -1,44 +1,39 @@
-import "./SettingOption.css"
-import { useState } from "react"
+import { useState } from 'react'
+import './SettingOption.css'
+import { useUserPreferences } from 'contexts/PreferenceContext'
 
-export default function SettingOption({toggleOption}) {
+export default function SettingOption (props: {
+  toggleOption: () => void
+}) {
+  const { toggleOption } = props
+  const { preferences, setPreferences } = useUserPreferences()
 
-  const [temperature, setTemperature] = useState<number | ''>('');
-  const [humidity, setHumidity] = useState<number | ''>('');
-  const [windspeed, setWindSpeed] = useState<number | ''>('');
-  const [showOption, setShowOption] = useState(false);
+  const [temperature, setTemperature] = useState(preferences.temperature)
+  const [humidity, setHumidity] = useState(preferences.humidity)
+  const [windspeed, setWindSpeed] = useState(preferences.windspeed)
 
-  function handleGoBack() {
-    toggleOption();
+  function handleGoBack () {
+    toggleOption()
   }
 
   function handleTemperatureChange (event: React.ChangeEvent<HTMLInputElement>) {
-    const value = Number(event.target.value);
-    setTemperature(value);
-  };
+    setTemperature(Number(event.target.value))
+  }
 
   function handleHumidityChange (event: React.ChangeEvent<HTMLInputElement>) {
-    const value = Number(event.target.value);
-    setHumidity(value);
-  };
+    setHumidity(Number(event.target.value))
+  }
 
   function handleWindSpeedChange (event: React.ChangeEvent<HTMLInputElement>) {
-    const value = Number(event.target.value);
-    setWindSpeed(value);
-  };
-
-  const incrementValue = (stateSetter: React.Dispatch<React.SetStateAction<number | ''>>) => {
-    stateSetter((prevValue) => (typeof prevValue === 'number' ? prevValue + 1 : prevValue));
-  };
-
-  const decrementValue = (stateSetter: React.Dispatch<React.SetStateAction<number | ''>>) => {
-    stateSetter((prevValue) => (typeof prevValue === 'number' ? prevValue - 1 : prevValue));
-  };
+    setWindSpeed(Number(event.target.value))
+  }
 
   function handleSave () {
-    // You can save the state values here or perform any other necessary actions
-    console.log('Saving...', temperature, humidity, windspeed);
-  };
+    setPreferences((prevPreferences) => (
+      { ...prevPreferences, temperature }
+    ))
+    handleGoBack()
+  }
 
   return (
     <div className="settingOption">
@@ -50,8 +45,7 @@ export default function SettingOption({toggleOption}) {
         <p>Enter your answer below</p>
         <div className="question-box">
           <p>What’s temperature which you might need a jacket?</p>
-          <button type="button" onClick={() => 
-            decrementValue(setTemperature)}
+          <button type="button" onClick={() => { setTemperature(temperature - 1) }}
             disabled={temperature === 0}>-</button>
           <input
               type="number"
@@ -59,38 +53,36 @@ export default function SettingOption({toggleOption}) {
               value={temperature}
               onChange={handleTemperatureChange}
             />
-          <button type="button" onClick={() => incrementValue(setTemperature)}>+</button>
+          <button type="button" onClick={() => { setTemperature(temperature + 1) }}>+</button>
         </div>
         <div className="question-box">
           <p>What’s humidity which can make you feel cold?</p>
-          <button type="button" onClick={() => 
-            decrementValue(setHumidity)}
-            disabled={humidity === 0} >-</button>
+          <button type="button" onClick={() => { setHumidity(humidity - 1) }}
+            disabled={preferences.humidity === 0} >-</button>
           <input
               type="number"
               name="humidity"
-              value={humidity}
+              value={preferences.humidity}
               onChange={handleHumidityChange}
             />
-          <button type="button" onClick={() => incrementValue(setHumidity)}>+</button>
+          <button type="button" onClick={() => { setHumidity(humidity + 1) }}>+</button>
         </div>
         <div className="question-box">
           <p>What’s wind speed which make you feel uncomfortable?</p>
-          <button type="button" onClick={() => 
-            decrementValue(setWindSpeed)}
-            disabled={windspeed === 0}>-</button>
+          <button type="button" onClick={() => { setWindSpeed(windspeed - 1) }}
+            disabled={preferences.windspeed === 0}>-</button>
           <input
               type="number"
               name="windspeed"
-              value={windspeed}
+              value={preferences.windspeed}
               onChange={handleWindSpeedChange}
             />
-          <button type="button" onClick={() => incrementValue(setWindSpeed)}>+</button>
+          <button type="button" onClick={() => { setWindSpeed(windspeed + 1) }}>+</button>
         </div>
         <button onClick={handleSave}>Save</button>
       </div>
-      
+
     </div>
-    
+
   )
 }

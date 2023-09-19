@@ -1,43 +1,43 @@
-import "./Search.css"
+import './Search.css'
 import { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { fetchLocation } from "api.ts"
-import { LocationContext } from "contexts/LocationContext"
+import { fetchLocation } from 'api.ts'
+import { LocationContext } from 'contexts/LocationContext'
+import { LocationData } from '@shared/types'
 
-
-export default function Search() {
-
+export default function Search () {
   const { setSelectedLocation } = useContext(LocationContext)
 
-  const [searchInput, setSearchInput] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('')
+  const [searchResults, setSearchResults] = useState<LocationData[]>([])
 
-  function handleSearchInputChange(event) {
-    setSearchInput(event.target.value);
-  };
+  function handleSearchInputChange (event: React.ChangeEvent<HTMLInputElement>) {
+    setSearchInput(event.target.value)
+  }
 
   useEffect(() => {
     if (searchInput.length >= 3) {
       fetchLocation(searchInput).then((data) => {
-        setSearchResults(data);
-      });
+        setSearchResults(data)
+      }).catch(() => {
+        // TODO: Handle error
+      })
     } else {
-      setSearchResults([]);
+      setSearchResults([])
     }
-  }, [searchInput]);
+  }, [searchInput])
 
-  function handleLocationSelection (selectedLocation) {
-    console.log({selectedLocation})
-    const allSelectedLocation = JSON.parse(localStorage.getItem('selectedLocations')) || [];
+  function handleAddLocation (selectedLocation: LocationData) {
+    console.log({ selectedLocation })
+    const allSelectedLocation = JSON.parse(localStorage.getItem('selectedLocations') ?? '[]') as LocationData[]
 
-    allSelectedLocation.push(selectedLocation);
+    allSelectedLocation.push(selectedLocation)
 
     localStorage.setItem('selectedLocations', JSON.stringify(allSelectedLocation))
     setSelectedLocation(selectedLocation)
 
-    window.location = '/location'
-  };
-  
+    window.location.href = '/location'
+  }
 
   return (
     <section className='search-section'>
@@ -51,7 +51,7 @@ export default function Search() {
       </div>
       <div className="search-input">
         <div className="search-box">
-          <input 
+          <input
             type="text"
             placeholder="Search for a location..."
             value={searchInput}
@@ -65,13 +65,13 @@ export default function Search() {
       <div className="search-result">
         <ul>
         {searchResults.map((location) => (
-          <li key={location.id} onClick={() => handleLocationSelection(location)}>
+          <li key={location.id} onClick={() => { handleAddLocation(location) }}>
             {location.name} - {location.country}
           </li>
         ))}
         </ul>
       </div>
     </section>
-    
+
   )
 }

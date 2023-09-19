@@ -6,7 +6,6 @@ import { TodayData } from '@shared/types'
 import { Link } from 'react-router-dom'
 
 export default function Today () {
-
   const { weather } = useContext(WeatherContext)
   const currentWeather = weather?.current
 
@@ -20,16 +19,16 @@ export default function Today () {
     })().catch(err => { console.log(err) })
   }, [])
 
-  function formatDate(date: Date): string {
-    const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
-    return new Intl.DateTimeFormat('en-US', options).format(date);
+  function formatDate (date: Date): string {
+    const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }
+    return new Intl.DateTimeFormat('en-US', options).format(date)
   }
-  
-  const now = new Date();
-  const formattedDate = formatDate(now);
-  //console.log(formattedDate); // Output: Tue, 5 Sep 2023
-  
-const uvIndex = Number(currentWeather?.uv).toFixed(1)
+
+  const now = new Date()
+  const formattedDate = formatDate(now)
+  // console.log(formattedDate); // Output: Tue, 5 Sep 2023
+
+  const uvIndex = Number(currentWeather?.uv).toFixed(1)
 
   return (
     <section className="today-section">

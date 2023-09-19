@@ -1,32 +1,34 @@
-import "./Location.css"
+import './Location.css'
 import { useContext, useState, useEffect } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
-import { LocationContext } from "contexts/LocationContext"
+// import { LocationContext } from 'contexts/LocationContext'
 import { Link } from 'react-router-dom'
+import { LocationData } from '@shared/types'
 
 export default function Location () {
-
   const { weather } = useContext(WeatherContext)
-  const { setSelectedLocation } = useContext(LocationContext)
+  // const { setSelectedLocation } = useContext(LocationContext)
 
-  const [selectedLocations, setSelectedLocations] = useState([]);
+  const [selectedLocations, setSelectedLocations] = useState<LocationData[]>([])
 
   const location = weather?.location
 
   useEffect(() => {
-    const storedLocations = JSON.parse(localStorage.getItem('selectedLocations')) || [];
-    setSelectedLocations(storedLocations);
-  }, []);
-  
+    const storedLocations = JSON.parse(localStorage.getItem('selectedLocations') ?? '[]') as LocationData[]
+    setSelectedLocations(storedLocations)
+  }, [])
 
-  function handleDeleteLocation(index) {
-    const updatedLocations = [...selectedLocations];
-    updatedLocations.splice(index,1)
+  function handleDeleteLocation (index: number) {
+    const updatedLocations = [...selectedLocations]
+    updatedLocations.splice(index, 1)
 
     setSelectedLocations(updatedLocations)
     localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))
   }
-  
+
+  function handleSelectLocation () {
+    window.location.href = '/'
+  }
 
   return (
     <section className="location-section">
@@ -51,15 +53,15 @@ export default function Location () {
           <p>{location?.name} - {location?.country}</p>
         </div>
         {selectedLocations.map((selectedLocation, index) => (
-          <div className="location-card" key={index} >
+          <div className="location-card" key={index} onClick={handleSelectLocation}>
             <p>{selectedLocation.name} - {selectedLocation.country}</p>
-            <div className="trash-icon" onClick={() => handleDeleteLocation(index)}>
+            <div className="trash-icon" onClick={() => { handleDeleteLocation(index) }}>
               <img src="/public/trash.png" alt="trash" />
             </div>
           </div>
         ))}
       </div>
     </section>
-    
+
   )
 }

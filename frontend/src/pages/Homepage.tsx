@@ -6,15 +6,14 @@ import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
 
 export default function Homepage () {
-
   const { weather } = useContext(WeatherContext)
 
-  const alertWeather = weather?.alerts?.alert
+  const alertWeather = weather?.alerts.alert
   const shouldShowAlertIcon = alertWeather?.length > 0
 
   return (
     <div className='homepage'>
-      <section className='top-content'> 
+      <section className='top-content'>
         <header className='app-header'>
           <div className='logo'>
             <img src="./public/logo.png" alt="logo" />
@@ -22,7 +21,7 @@ export default function Homepage () {
           {shouldShowAlertIcon && (
             <Link to="/alert">
             <div className='alert-icon'>
-              <button  className='aleart-btn'>
+              <button className='aleart-btn'>
                 <img src="./public/alert.png" alt="alert" />
               </button>
             </div>

@@ -2,11 +2,10 @@ import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
 import './ForecastWeather.css'
 
-
 export default function ForecastWeather () {
   const { weather } = useContext(WeatherContext)
 
-  const forecastWeather = weather?.forecast?.forecastday
+  const forecastWeather = weather?.forecast.forecastday
 
   // to get the name of the day of the week
   const getDayName = (dateString: string) => {

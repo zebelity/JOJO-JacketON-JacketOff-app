@@ -1,17 +1,23 @@
-import "./Setting.css"
-import { useContext, useState, useEffect } from 'react'
+import './Setting.css'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import SettingOption from "components/SettingOption"
-
-
+import SettingOption from 'components/SettingOption'
 
 export default function Setting () {
+  const [showOption, setShowOption] = useState(false)
+  const [selectedUnit, setSelectedUnit] = useState('°C')
 
-  const [showOption, setShowOption] = useState(false);
+  function toggleOption () {
+    setShowOption(!showOption)
+  }
 
-  const toggleOption = () => {
-    setShowOption(!showOption);
-  };
+  function handleUnitToggle () {
+    setSelectedUnit(selectedUnit === '°C' ? '°F' : '°C')
+  }
+
+  useEffect(() => {
+
+  }, [selectedUnit])
 
   return (
     <section className="setting-section">
@@ -24,9 +30,11 @@ export default function Setting () {
         <h2>Settings</h2>
       </div>
 
-      { showOption ? (
+      { showOption
+        ? (
         < SettingOption toggleOption={toggleOption}/>
-      ) : (
+          )
+        : (
         <>
         <div className="setting-card">
           <h3>Preferences</h3>
@@ -43,7 +51,13 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/public/thermometer-warm.png" alt="thermometer" />
             </div>
-            <p>Unit °C</p>
+            <p>Unit {selectedUnit}</p>
+            <div className="toggle-switch">
+            <label className="switch">
+                <input type="checkbox" onClick={handleUnitToggle} />
+                <span className="slider round"></span>
+              </label>
+            </div>
           </div>
           <div className="set-info">
             <div className="setting-icon">
@@ -59,7 +73,7 @@ export default function Setting () {
           </div>
         </div>
         </>
-      )}
+          )}
     </section>
   )
 }

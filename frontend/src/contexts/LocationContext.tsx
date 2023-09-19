@@ -1,4 +1,4 @@
-import { LocationData } from '@shared/types';
+import { LocationData } from '@shared/types'
 import { createContext, useState, ReactNode } from 'react'
 
 interface LocationContextType {
@@ -15,11 +15,9 @@ export const LocationContext = createContext<LocationContextType>({ selectedLoca
 export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) => {
   const [selectedLocation, setSelectedLocation] = useState<LocationData | null>(null)
 
-
   return (
     <LocationContext.Provider value={{ selectedLocation, setSelectedLocation }}>
       {children}
     </LocationContext.Provider>
-  );
+  )
 }
-
