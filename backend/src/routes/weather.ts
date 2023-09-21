@@ -49,7 +49,7 @@ router.get('/', async (req: Request, res: Response) => {
     });
 
     const weatherData = response.data;
-    console.log({ weatherData });
+    console.log({ weatherData});
     return res.json(weatherData);
   } catch (error) {
     console.error((error as Error).message);

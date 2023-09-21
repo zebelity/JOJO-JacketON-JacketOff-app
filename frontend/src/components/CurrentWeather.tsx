@@ -1,19 +1,9 @@
 import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
-// import { LocationContext } from 'contexts/LocationContext'
 import './CurrentWeather.css'
-// import { useLocation } from 'react-router-dom'
 
 export default function CurrentWeather () {
   const { weather } = useContext(WeatherContext)
-  // const { setSelectedLocation } = useContext(LocationContext)
-
-  // const location = useLocation()
-  // const searchParams = new URLSearchParams(location.search)
-  // const selectedLocation = searchParams.get('location')
-  // // console.log({location})
-  // console.log({searchParams})
-  // console.log({selectedLocation})
 
   const currentWeather = weather?.current
 

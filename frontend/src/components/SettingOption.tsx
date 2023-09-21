@@ -29,9 +29,14 @@ export default function SettingOption (props: {
   }
 
   function handleSave () {
-    setPreferences((prevPreferences) => (
-      { ...prevPreferences, temperature }
-    ))
+    const updatedPreferences = {
+      ...preferences,
+      temperature,
+      humidity,
+      windspeed
+    }
+    // Call setPreferences to update the context with the new preferences
+    setPreferences(updatedPreferences)
     handleGoBack()
   }
 
@@ -58,11 +63,11 @@ export default function SettingOption (props: {
         <div className="question-box">
           <p>What’s humidity which can make you feel cold?</p>
           <button type="button" onClick={() => { setHumidity(humidity - 1) }}
-            disabled={preferences.humidity === 0} >-</button>
+            disabled={humidity === 0} >-</button>
           <input
               type="number"
               name="humidity"
-              value={preferences.humidity}
+              value={humidity}
               onChange={handleHumidityChange}
             />
           <button type="button" onClick={() => { setHumidity(humidity + 1) }}>+</button>
@@ -74,7 +79,7 @@ export default function SettingOption (props: {
           <input
               type="number"
               name="windspeed"
-              value={preferences.windspeed}
+              value={windspeed}
               onChange={handleWindSpeedChange}
             />
           <button type="button" onClick={() => { setWindSpeed(windspeed + 1) }}>+</button>

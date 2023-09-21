@@ -17,14 +17,14 @@ router.get('/', async (req: Request, res: Response) => {
       params: {
         key: process.env.WEATHER_API_KEY,
         q
-      },
-    });
+      }
+    })
     const locationData = response.data;
-    console.log({ locationData });
-    return res.json(locationData);
+    console.log({ locationData })
+    return res.json(locationData)
   } catch (error) {
     console.error((error as AxiosError).response?.data)
-    console.error((error as Error).message);
+    console.error((error as Error).message)
     res.status(500).json({ error: 'An error occurred while fetching search location data.' });
   }
 })

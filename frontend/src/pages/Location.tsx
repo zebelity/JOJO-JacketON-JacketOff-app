@@ -1,13 +1,11 @@
 import './Location.css'
 import { useContext, useState, useEffect } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
-// import { LocationContext } from 'contexts/LocationContext'
 import { Link } from 'react-router-dom'
 import { LocationData } from '@shared/types'
 
 export default function Location () {
   const { weather } = useContext(WeatherContext)
-  // const { setSelectedLocation } = useContext(LocationContext)
 
   const [selectedLocations, setSelectedLocations] = useState<LocationData[]>([])
 

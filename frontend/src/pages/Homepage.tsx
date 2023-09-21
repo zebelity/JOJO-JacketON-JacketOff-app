@@ -1,9 +1,11 @@
 import './Homepage.css'
 import CurrentWeather from 'components/CurrentWeather'
 import ForecastWeather from 'components/ForecastWeather'
+import Recommendation from 'components/Recommendation'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
+
 
 export default function Homepage () {
   const { weather } = useContext(WeatherContext)
@@ -33,6 +35,7 @@ export default function Homepage () {
       <h1>JOJO App</h1>
       <div className='content'>
         < CurrentWeather/>
+        < Recommendation/>
         < ForecastWeather/>
         <section className='footer-content'>
           <Link to="/location">

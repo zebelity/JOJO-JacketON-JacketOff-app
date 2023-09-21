@@ -32,9 +32,9 @@ export const UserPreferenceProvider = ({ children }: UserPreferenceProviderProps
     return storedPreferences
       ? JSON.parse(storedPreferences)
       : {
-          temperature: '',
-          humidity: '',
-          windspeed: ''
+          temperature: 0,
+          humidity: 0,
+          windspeed: 0
         }
   })
 

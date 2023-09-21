@@ -1,0 +1,14 @@
+.recommendation-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center; 
+}
+
+.recommendation-section p {
+  font-size: 24px; 
+  margin-bottom: 20px;
+}
+
+.recommendation-section img {
+  max-width: 100%;
+}
