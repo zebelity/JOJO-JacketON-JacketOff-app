@@ -3,16 +3,44 @@
   justify-content: space-between; 
   align-items: center; /* Center the content vertically */
 }
+.forecast-card img {
+  max-width: 100%;
+}
 
 /* Style each forecast card */
 .forecast-card {
   text-align: center;
 }
 
-.forecast-card img {
-  max-width: 100px; /* Limit the image width */
+@media (max-width: 500px) {
+  .smartphone .forecast-card img {
+    height: 70px;
+  }
+  .forecast-card p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
 }
 
-.forecast-card p {
-  margin: 8px 0; /* Add some vertical spacing between elements */
+@media (min-width: 501px) and (max-width: 768px) {
+  .tablet .forecast-card img {
+    height: 80px;
+  }
+  
+  .forecast-card p {
+    margin: 6px 0;
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 769px){
+  .normal .forecast-card img {
+    height: 90px;
+  }
+  
+  .forecast-card p {
+    margin: 8px 0;
+    font-size: 20px;
+  }
 }

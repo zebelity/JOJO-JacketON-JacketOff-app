@@ -14,7 +14,7 @@ export default function Homepage () {
   const shouldShowAlertIcon = alertWeather?.length > 0
 
   return (
-    <div className='homepage'>
+    <div className='homepage smartphone tablet normal'>
       <section className='top-content'>
         <header className='app-header'>
           <div className='logo'>

@@ -86,7 +86,6 @@ export default function SettingOption (props: {
         </div>
         <button onClick={handleSave}>Save</button>
       </div>
-
     </div>
 
   )

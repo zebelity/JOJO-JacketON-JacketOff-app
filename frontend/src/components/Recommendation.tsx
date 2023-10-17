@@ -8,7 +8,7 @@ export default function Recommendation() {
 
   const currentWeather = weather?.current
   // Get user preferences from local storage
-  const userPreferences = getUserPreferencesFromLocalStorage(); // Implement this function
+  const userPreferences = getUserPreferencesFromLocalStorage();
   console.log({userPreferences})
 
   // Function to retrieve user preferences from local storage
@@ -23,18 +23,18 @@ export default function Recommendation() {
  
   function preferenceRecommendation() {
     if (
-      currentWeather?.temp_c < userPreferences?.temperature || // Note the use of "?"
-      currentWeather?.humidity < userPreferences?.humidity || // Note the use of "?"
-      currentWeather?.wind_mph > userPreferences?.windSpeed // Note the use of "?"
+      currentWeather?.temp_c <= userPreferences?.temperature ||
+      currentWeather?.humidity <= userPreferences?.humidity ||
+      currentWeather?.wind_mph >= userPreferences?.windSpeed
     ) {
       return "Jacket ON";
     } else {
-      return "Jacket OFF"; // You were missing the "return" statement here
+      return "Jacket OFF";
     }
   }
 
 
-// Calculate recommendation based on user preferences (if available)
+// Calculate recommendation based on user preferences
   const recommendation = userPreferences? preferenceRecommendation() : defaultRecommendation
   console.log({recommendation})
   console.log({defaultRecommendation})
@@ -44,11 +44,13 @@ export default function Recommendation() {
       ? (
       <>
       <p>{recommendation}</p>
-      {recommendation === 'Jacket ON' ? (
+      <div className='jacket-icon'>
+         {recommendation === 'Jacket ON' ? (
         <img src="/public/jacket.png" alt="jacket-on" />
         ) : (
         <img src="/public/shirt.png" alt="jacket-off" />
       )}
+      </div>
       </>
     ) : <p className='code'>Loading recommendation data...</p>}
     </section>

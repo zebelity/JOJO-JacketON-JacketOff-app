@@ -11,12 +11,12 @@ export default function Setting () {
     setShowOption(!showOption)
   }
 
-  function handleUnitToggle () {
-    setSelectedUnit(selectedUnit === '°C' ? '°F' : '°C')
+  function handleUnitChange (event) {
+    setSelectedUnit(event.target.value)
   }
 
   useEffect(() => {
-
+    console.log('Selected unit changed to:', selectedUnit)
   }, [selectedUnit])
 
   return (
@@ -51,13 +51,15 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/public/thermometer-warm.png" alt="thermometer" />
             </div>
-            <p>Unit {selectedUnit}</p>
-            <div className="toggle-switch">
-            <label className="switch">
-                <input type="checkbox" onClick={handleUnitToggle} />
-                <span className="slider round"></span>
-              </label>
-            </div>
+            <p>Unit</p>
+            <select
+                value={selectedUnit}
+                onChange={handleUnitChange}
+                className="unit-select"
+              >
+                <option value="°C">°C</option>
+                <option value="°F">°F</option>
+            </select>
           </div>
           <div className="set-info">
             <div className="setting-icon">

@@ -1,5 +1,10 @@
 .mainicon {
-  height: 100px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.current-weather h2 {
+  margin: 0;
 }
 
 .weather-wrap {
@@ -10,10 +15,66 @@
 
 .wrap-icon {
   text-align: center;
-  margin: 0 30px; 
-  padding: 20px;
 }
 
 .icon-container {
   height: 80px;
 }
+
+@media (max-width: 500px) {
+  .smartphone h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .mainicon {
+    height: 120px;
+  }
+  .wrap-icon {
+    margin: 0 30px; 
+    padding: 10px;
+  }
+  .icon-container img{
+    height: 40px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  .tablet h2 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 20px;
+  }
+  .mainicon {
+    height: 150px;
+  }
+  .wrap-icon {
+    margin: 0 40px; 
+    padding: 15px;
+  }
+  .icon-container img{
+    height: 50px;
+  }
+}
+
+@media (min-width: 769px){
+  .normal h2 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 30px;
+  }
+  .mainicon {
+    height: 180px;
+  }
+  .wrap-icon {
+    margin: 0 50px; 
+    padding: 20px;
+  }
+  .icon-container img{
+    height: 70px;
+  }
+}
+

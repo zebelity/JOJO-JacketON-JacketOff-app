@@ -33,7 +33,6 @@
 }
 
 h1 {
-  font-size: 3.2em;
   line-height: 1.1;
   text-align: center;
 }
@@ -63,10 +62,6 @@ a {
 
 .footer-card {
   text-align: center;
-  margin: 0 30px;
-  padding: 20px;
 }
 
-.icon-footer {
-  height: 10px;
-}
+

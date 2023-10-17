@@ -26,7 +26,7 @@ export default function CurrentWeather () {
               <div className='icon-container'>
                 <img src="./public/thermometer.png" alt="icon" />
               </div>
-              <h4>{currentWeather?.temp_c} °C</h4>
+              <p>{currentWeather?.temp_c} °C</p>
             </div>
             <div className='wrap-icon'>
               <div className='icon-container'>

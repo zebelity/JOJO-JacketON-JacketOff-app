@@ -19,6 +19,7 @@ export default function Location () {
   function handleDeleteLocation (index: number) {
     const updatedLocations = [...selectedLocations]
     updatedLocations.splice(index, 1)
+  
 
     setSelectedLocations(updatedLocations)
     localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))
@@ -51,14 +52,15 @@ export default function Location () {
           <p>{location?.name} - {location?.country}</p>
         </div>
         {selectedLocations.map((selectedLocation, index) => (
-          <div className="location-card" key={index} onClick={handleSelectLocation}>
-            <p>{selectedLocation.name} - {selectedLocation.country}</p>
+          <div className="location-card" key={index}>
+            <p onClick={handleSelectLocation} >{selectedLocation.name} - {selectedLocation.country}</p>
             <div className="trash-icon" onClick={() => { handleDeleteLocation(index) }}>
               <img src="/public/trash.png" alt="trash" />
             </div>
           </div>
         ))}
       </div>
+
     </section>
 
   )
