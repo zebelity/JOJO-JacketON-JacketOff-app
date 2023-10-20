@@ -31,6 +31,7 @@ export default function Location () {
 
   return (
     <section className="location-section">
+    <div className='smartphone tablet normal'>
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
@@ -60,7 +61,7 @@ export default function Location () {
           </div>
         ))}
       </div>
-
+    </div>
     </section>
 
   )

@@ -41,12 +41,12 @@ export default function SettingOption (props: {
   }
 
   return (
-    <div className="settingOption">
+    <div className="settingOption smartphone tablet normal">
       <div className="goback-icon" onClick={handleGoBack}>
         <img src="/public/arrow-left.png" alt="back" />
       </div>
       <div className="setting-box">
-        <h3>Preference by Values</h3>
+        <h3>Preferences</h3>
         <p>Enter your answer below</p>
         <div className="question-box">
           <p>What’s temperature which you might need a jacket?</p>
@@ -84,7 +84,7 @@ export default function SettingOption (props: {
             />
           <button type="button" onClick={() => { setWindSpeed(windspeed + 1) }}>+</button>
         </div>
-        <button onClick={handleSave}>Save</button>
+        <button className='save-btn' onClick={handleSave}>Save</button>
       </div>
     </div>
 

@@ -20,7 +20,7 @@ export default function Setting () {
   }, [selectedUnit])
 
   return (
-    <section className="setting-section">
+    <section className="setting-section normal tablet smartphone">
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
