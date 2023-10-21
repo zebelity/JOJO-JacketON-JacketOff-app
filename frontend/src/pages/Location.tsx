@@ -19,7 +19,6 @@ export default function Location () {
   function handleDeleteLocation (index: number) {
     const updatedLocations = [...selectedLocations]
     updatedLocations.splice(index, 1)
-  
 
     setSelectedLocations(updatedLocations)
     localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))

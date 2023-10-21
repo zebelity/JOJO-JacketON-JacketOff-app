@@ -1,6 +1,6 @@
 import { createContext, useState, ReactNode, useEffect, useContext } from 'react'
 
-interface UserPreferences {
+export interface UserPreferences {
   temperature: number;
   humidity: number;
   windspeed: number;
@@ -30,7 +30,7 @@ export const UserPreferenceProvider = ({ children }: UserPreferenceProviderProps
     // Retrieve preferences from local storage when the app initializes
     const storedPreferences = localStorage.getItem('userPreferences')
     return storedPreferences
-      ? JSON.parse(storedPreferences)
+      ? JSON.parse(storedPreferences) as UserPreferences
       : {
           temperature: 0,
           humidity: 0,

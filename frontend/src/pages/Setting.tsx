@@ -11,7 +11,7 @@ export default function Setting () {
     setShowOption(!showOption)
   }
 
-  function handleUnitChange (event) {
+  function handleUnitChange (event: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedUnit(event.target.value)
   }
 

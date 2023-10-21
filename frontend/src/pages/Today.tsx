@@ -20,7 +20,7 @@ export default function Today () {
   }, [])
 
   function formatDate (date: Date): string {
-    const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }
+    const options: Intl.DateTimeFormatOptions = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }
     return new Intl.DateTimeFormat('en-US', options).format(date)
   }
 

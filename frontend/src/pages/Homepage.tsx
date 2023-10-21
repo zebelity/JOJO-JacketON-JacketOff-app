@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
 
-
 export default function Homepage () {
   const { weather } = useContext(WeatherContext)
 
