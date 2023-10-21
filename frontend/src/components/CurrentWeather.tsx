@@ -18,19 +18,19 @@ export default function CurrentWeather () {
           <div className='weather-wrap'>
             <div className='wrap-icon'>
               <div className='icon-container'>
-                <img src="./public/droplets.png" alt="humidity" />
+                <img src="/droplets.png" alt="humidity" />
               </div>
               <p>{currentWeather?.humidity} % </p>
             </div>
             <div className='wrap-icon'>
               <div className='icon-container'>
-                <img src="./public/thermometer.png" alt="icon" />
+                <img src="/thermometer.png" alt="icon" />
               </div>
               <p>{currentWeather?.temp_c} °C</p>
             </div>
             <div className='wrap-icon'>
               <div className='icon-container'>
-                <img src="./public/wind.png" alt="wind" />
+                <img src="/wind.png" alt="wind" />
               </div>
               <p>{currentWeather?.wind_mph} km/h</p>
             </div>

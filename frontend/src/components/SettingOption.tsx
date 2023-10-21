@@ -43,7 +43,7 @@ export default function SettingOption (props: {
   return (
     <div className="settingOption smartphone tablet normal">
       <div className="goback-icon" onClick={handleGoBack}>
-        <img src="/public/arrow-left.png" alt="back" />
+        <img src="/arrow-left.png" alt="back" />
       </div>
       <div className="setting-box">
         <h3>Preferences</h3>

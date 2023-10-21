@@ -24,7 +24,7 @@ export default function Setting () {
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
-          <img src="./public/home.png" alt="home" />
+          <img src="/home.png" alt="home" />
         </div>
         </Link>
         <h2>Settings</h2>
@@ -40,7 +40,7 @@ export default function Setting () {
           <h3>Preferences</h3>
             <div className="set-info" onClick={toggleOption}>
               <div className="setting-icon">
-                <img src="/public/adjustments.png" alt="setting" />
+                <img src="/adjustments.png" alt="setting" />
               </div>
               <p>Option: By Values</p>
             </div>
@@ -49,7 +49,7 @@ export default function Setting () {
           <h3>General</h3>
           <div className="set-info">
             <div className="setting-icon">
-              <img src="/public/thermometer-warm.png" alt="thermometer" />
+              <img src="/thermometer-warm.png" alt="thermometer" />
             </div>
             <p>Unit</p>
             <select
@@ -63,13 +63,13 @@ export default function Setting () {
           </div>
           <div className="set-info">
             <div className="setting-icon">
-              <img src="/public/bell.png" alt="bell" />
+              <img src="/bell.png" alt="bell" />
             </div>
             <p>Notifications</p>
           </div>
           <div className="set-info">
             <div className="setting-icon">
-              <img src="/public/location.png" alt="setting" />
+              <img src="/location.png" alt="setting" />
             </div>
             <p>Use Current Location</p>
           </div>

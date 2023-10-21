@@ -55,10 +55,10 @@ export default function Recommendation () {
       <div className='jacket-icon'>
          {recommendation === 'Jacket ON'
            ? (
-        <img src="/public/jacket.png" alt="jacket-on" />
+        <img src="/jacket.png" alt="jacket-on" />
              )
            : (
-        <img src="/public/shirt.png" alt="jacket-off" />
+        <img src="/shirt.png" alt="jacket-off" />
              )}
       </div>
     </section>

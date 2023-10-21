@@ -36,7 +36,7 @@ export default function Today () {
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
-          <img src="./public/home.png" alt="home" />
+          <img src="/home.png" alt="home" />
         </div>
         </Link>
         <h2>Today</h2>
@@ -60,35 +60,35 @@ export default function Today () {
             <h3>Sunrise</h3>
             <p>{todayAstro?.astronomy.astro.sunrise}</p>
             <div className='astro-icon'>
-              <img src="/public/sunrise.png" alt="sunrise" />
+              <img src="/sunrise.png" alt="sunrise" />
             </div>
           </div>
           <div className='sunset-card'>
             <h3>Sunset</h3>
             <p>{todayAstro?.astronomy.astro.sunset}</p>
             <div className='astro-icon'>
-              <img src="/public/sunset.png" alt="sunset" />
+              <img src="/sunset.png" alt="sunset" />
             </div>
           </div>
         </div>
         <div className='info-data'>
           <div className='info-card'>
               <div className='info-icon'>
-                <img src="/public/uvindex.png" alt="uv" />
+                <img src="/uvindex.png" alt="uv" />
               </div>
               <h3>UV Index</h3>
               <p>{uvIndex}</p>
           </div>
           <div className='info-card'>
               <div className='info-icon'>
-                <img src="/public/humidity.png" alt="humidity" />
+                <img src="/humidity.png" alt="humidity" />
               </div>
               <h3>Humidity</h3>
               <p>{currentWeather?.humidity}</p>
           </div>
           <div className='info-card'>
               <div className='info-icon'>
-                <img src="/public/wind2.png" alt="wind" />
+                <img src="/wind2.png" alt="wind" />
               </div>
               <h3>Wind</h3>
               <p>{currentWeather?.wind_mph} km/h</p>

@@ -23,7 +23,7 @@ export default function Homepage () {
             <Link to="/alert">
             <div className='alert-icon'>
               <button className='aleart-btn'>
-                <img src="./public/alert.png" alt="alert" />
+                <img src="/alert.png" alt="alert" />
               </button>
             </div>
             </Link>
@@ -40,7 +40,7 @@ export default function Homepage () {
           <Link to="/location">
             <div className="footer-card">
               <div className="icon-footer">
-                <img src="./public/location.png" alt="today" />
+                <img src="/location.png" alt="today" />
               </div>
               <h4>Location</h4>
             </div>
@@ -48,7 +48,7 @@ export default function Homepage () {
           <Link to="/today">
             <div className="footer-card">
               <div className="icon-footer">
-                <img src="./public/dotdot.png" alt="today" />
+                <img src="/dotdot.png" alt="today" />
               </div>
               <h4>Today</h4>
             </div>
@@ -56,7 +56,7 @@ export default function Homepage () {
           <Link to="/setting">
             <div className="footer-card">
               <div className="icon-footer">
-                <img src="./public/settings.png" alt="today" />
+                <img src="/settings.png" alt="today" />
               </div>
               <h4>Setting</h4>
             </div>

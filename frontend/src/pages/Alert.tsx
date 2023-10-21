@@ -13,7 +13,7 @@ export default function Alert () {
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
-          <img src="./public/home.png" alt="home" />
+          <img src="/home.png" alt="home" />
         </div>
         </Link>
         <h2>Alerts</h2>

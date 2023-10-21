@@ -34,20 +34,20 @@ export default function Location () {
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
-          <img src="./public/home.png" alt="home" />
+          <img src="/home.png" alt="home" />
         </div>
         </Link>
         <h2>Manage Location</h2>
         <Link to="/search">
         <div className="plus-icon">
-          <img src="/public/plus.png" alt="plus" />
+          <img src="/plus.png" alt="plus" />
         </div>
         </Link>
       </div>
       <div className="info-location">
         <div className="location-card">
           <div className="location-icon">
-            <img src="/public/location.png" alt="location" />
+            <img src="/location.png" alt="location" />
           </div>
           <p>{location?.name} - {location?.country}</p>
         </div>
@@ -55,7 +55,7 @@ export default function Location () {
           <div className="location-card" key={index}>
             <p onClick={handleSelectLocation} >{selectedLocation.name} - {selectedLocation.country}</p>
             <div className="trash-icon" onClick={() => { handleDeleteLocation(index) }}>
-              <img src="/public/trash.png" alt="trash" />
+              <img src="/trash.png" alt="trash" />
             </div>
           </div>
         ))}

@@ -44,7 +44,7 @@ export default function Search () {
       <div className="wraptop-today">
         <Link to="/location">
         <div className="back-icon">
-          <img src="./public/back.png" alt="back" />
+          <img src="/back.png" alt="back" />
         </div>
         </Link>
         <h2>Search</h2>
@@ -59,7 +59,7 @@ export default function Search () {
           />
         </div>
         <div className="search-icon">
-          <img src="/public/search.png" alt="search" />
+          <img src="/search.png" alt="search" />
         </div>
       </div>
       <div className="search-result">
