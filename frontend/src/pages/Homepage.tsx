@@ -17,7 +17,7 @@ export default function Homepage () {
       <section className='top-content'>
         <header className='app-header'>
           <div className='logo'>
-            <img src="public/logo.png" alt="logo" />
+            <img src="/logo.png" alt="logo" />
           </div>
           {shouldShowAlertIcon && (
             <Link to="/alert">
