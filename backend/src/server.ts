@@ -5,7 +5,6 @@ import * as dotenv from 'dotenv'
 import { weatherRouter } from './routes/weather';
 import { locationRouter } from './routes/location';
 
-
 dotenv.config({ path: '.env.local' })
 dotenv.config()
 
