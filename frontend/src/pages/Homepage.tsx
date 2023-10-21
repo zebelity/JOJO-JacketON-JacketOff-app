@@ -9,8 +9,8 @@ import { WeatherContext } from 'contexts/WeatherContext'
 export default function Homepage () {
   const { weather } = useContext(WeatherContext)
 
-  const alertWeather = weather?.alerts.alert
-  const shouldShowAlertIcon = alertWeather?.length > 0
+  const weatherAlerts = weather?.alerts.alert.length ?? 0
+  const shouldShowAlertIcon = weatherAlerts > 0
 
   return (
     <div className='homepage smartphone tablet normal'>
