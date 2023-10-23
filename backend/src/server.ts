@@ -16,7 +16,4 @@ app.use(express.json());
 app.use('/', weatherRouter);
 app.use('/search', locationRouter)
 
-
-
-
 app.listen(PORT, () => { console.log(`Server listening to port ${PORT}`) })

@@ -10,6 +10,7 @@ export default function Search () {
 
   const [searchInput, setSearchInput] = useState('')
   const [searchResults, setSearchResults] = useState<LocationData[]>([])
+  const [error, setError] = useState(null)
 
   function handleSearchInputChange (event: React.ChangeEvent<HTMLInputElement>) {
     setSearchInput(event.target.value)
@@ -20,7 +21,8 @@ export default function Search () {
       fetchLocation(searchInput).then((data) => {
         setSearchResults(data)
       }).catch(() => {
-        // TODO: Handle error
+        console.error('Cannot find location', error)
+        setError(error)
       })
     } else {
       setSearchResults([])
@@ -40,7 +42,7 @@ export default function Search () {
   }
 
   return (
-    <section className='search-section'>
+    <section className='search-section smartphone tablet normal'>
       <div className="wraptop-today">
         <Link to="/location">
         <div className="back-icon">

@@ -9,7 +9,7 @@ export default function Alert () {
   const alertWeather = weather?.alerts.alert
 
   return (
-    <section className='alert-section'>
+    <section className='alert-section smartphone tablet normal'>
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">

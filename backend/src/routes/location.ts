@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
-import axios, { AxiosError } from 'axios';
-import dotenv from 'dotenv';
+import axios, { AxiosError } from 'axios'
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
 const router = express.Router()
 

@@ -1,23 +1,23 @@
 import './Setting.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SettingOption from 'components/SettingOption'
 
 export default function Setting () {
   const [showOption, setShowOption] = useState(false)
-  const [selectedUnit, setSelectedUnit] = useState('°C')
+  // const [selectedUnit, setSelectedUnit] = useState('°C')
 
   function toggleOption () {
     setShowOption(!showOption)
   }
 
-  function handleUnitChange (event: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedUnit(event.target.value)
-  }
+  // function handleUnitChange (event: React.ChangeEvent<HTMLSelectElement>) {
+  //   setSelectedUnit(event.target.value)
+  // }
 
-  useEffect(() => {
-    console.log('Selected unit changed to:', selectedUnit)
-  }, [selectedUnit])
+  // useEffect(() => {
+  //   console.log('Selected unit changed to:', selectedUnit)
+  // }, [selectedUnit])
 
   return (
     <section className="setting-section normal tablet smartphone">
@@ -51,15 +51,15 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/thermometer-warm.png" alt="thermometer" />
             </div>
-            <p>Unit</p>
-            <select
+            <p>Unit °C - Celsius</p>
+            {/* <select
                 value={selectedUnit}
                 onChange={handleUnitChange}
                 className="unit-select"
               >
                 <option value="°C">°C</option>
                 <option value="°F">°F</option>
-            </select>
+            </select> */}
           </div>
           <div className="set-info">
             <div className="setting-icon">
