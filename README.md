@@ -1,4 +1,6 @@
 # JOJO-Jacket On Jacket Off
+Welcome to JOJO app!!
+Try now [Demo] (https://jojo-frontend.onrender.com)
 
 ## Table of Contents
 
@@ -13,6 +15,16 @@
 JOJO is designed to make the decision of wearing a jacket as easy as possible. It combines user preferences with real-time weather data to provide clear and instant recommendations - "Jacket ON" or "Jacket OFF."
 
 ## Features
+
+### Homepage
+<img width="1328" alt="image" src="frontend/public/homepage.png">
+
+### Today-forecast
+<img width="1328" alt="image" src="frontend/public/todayweather.png">
+
+### Preferences
+<img width="1328" alt="image" src="frontend/public/preferences.png">
+
 - Retrieve current weather data for the user's location.
 - Allow users to modify their preferences in setting.
 - Options for preferences include temperature, humidity, wind speed values.
