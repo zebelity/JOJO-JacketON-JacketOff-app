@@ -20,6 +20,11 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('/background.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  background-color: #dcd3d3;
 }
 
 @media (prefers-color-scheme: light) {
