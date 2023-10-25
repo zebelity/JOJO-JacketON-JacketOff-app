@@ -46,11 +46,11 @@ JOJO is designed to make the decision of wearing a jacket as easy as possible. I
 - User Personas: Create user personas to understand the target audience better.
 - Document Software Requirements: Outline the software requirements.
 - Create Wireframes: Design initial wireframes to visualize the app's structure on Figma.
-<img width="1328" alt="image" src="/public/wireframe.png">
+<img width="1328" alt="image" src="/wireframe.png">
 
 #### Design & Architecture
 - High-Level System Architecture: Diagram the high-level system architecture.
-<img width="1328" alt="image" src="/public/JojoApp-diagram.png">
+<img width="1328" alt="image" src="/JojoApp-diagram.png">
 - API Interface and Endpoints: Define the API interface and endpoints.
 - Tech Stack Selection: Choose the tech stack, including React, Node.js etc.
 - Modularization: Break down features into components for scalability.
