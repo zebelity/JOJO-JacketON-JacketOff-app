@@ -1,6 +1,6 @@
 # JOJO-Jacket On Jacket Off
 Welcome to JOJO app!!
-Try now [Demo] (https://jojo-frontend.onrender.com)
+Try now [Demo](https://jojo-frontend.onrender.com)
 
 ## Table of Contents
 
