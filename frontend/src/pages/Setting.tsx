@@ -2,9 +2,12 @@ import './Setting.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SettingOption from 'components/SettingOption'
+import { useNotification } from 'contexts/NotificationContext'
 
 export default function Setting () {
   const [showOption, setShowOption] = useState(false)
+  const { permissionStatus } = useNotification()
+  console.log({ noti: permissionStatus })
   // const [selectedUnit, setSelectedUnit] = useState('°C')
 
   function toggleOption () {
@@ -65,7 +68,7 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/bell.png" alt="bell" />
             </div>
-            <p>Notifications</p>
+            <p>Notifications: {permissionStatus === 'granted' ? 'ON' : 'OFF'}</p>
           </div>
           <div className="set-info">
             <div className="setting-icon">
