@@ -1,12 +1,14 @@
 import './Location.css'
 import { useContext, useState, useEffect } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
+import { LocationContext } from 'contexts/LocationContext'
+import { fetchWeather } from 'api.ts'
 import { Link } from 'react-router-dom'
-import { LocationData } from '@shared/types'
+import { LocationData, WeatherData } from '@shared/types'
 
 export default function Location () {
   const { weather } = useContext(WeatherContext)
-
+  const { selectedLocation, setSelectedLocation } = useContext(LocationContext) // Get the selected location from the context
   const [selectedLocations, setSelectedLocations] = useState<LocationData[]>([])
 
   const location = weather?.location
@@ -24,7 +26,8 @@ export default function Location () {
     localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))
   }
 
-  function handleSelectLocation () {
+  function handleSelectLocation (location: LocationData) {
+    setSelectedLocation(location)
     window.location.href = '/'
   }
 
@@ -50,9 +53,9 @@ export default function Location () {
           </div>
           <p>{location?.name} - {location?.country}</p>
         </div>
-        {selectedLocations.map((selectedLocation, index) => (
+        {selectedLocations.map((locationItem, index) => (
           <div className="location-card" key={index}>
-            <p onClick={handleSelectLocation} >{selectedLocation.name} - {selectedLocation.country}</p>
+            <p onClick={() => { handleSelectLocation(locationItem) }} >{locationItem.name} - {locationItem.country}</p>
             <div className="trash-icon" onClick={() => { handleDeleteLocation(index) }}>
               <img src="/trash.png" alt="trash" />
             </div>

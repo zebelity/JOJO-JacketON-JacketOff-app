@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from 'express'
 import axios, { AxiosError } from 'axios'
 import dotenv from 'dotenv'
 
@@ -10,9 +10,12 @@ router.get('/', async (req: Request, res: Response) => {
   // console.log(process.env.WEATHER_API_KEY)
   try {
     const { q } = req.query
-
+    
+    if (!q) {
+      res.status(400).json({ error: 'Query parameter q is required.' });
+      return;
+    }
     console.log({ q })
-
     const response = await axios.get('https://api.weatherapi.com/v1/search.json', {
       params: {
         key: process.env.WEATHER_API_KEY,

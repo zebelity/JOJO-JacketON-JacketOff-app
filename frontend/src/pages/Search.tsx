@@ -1,12 +1,13 @@
 import './Search.css'
 import { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { fetchLocation } from 'api.ts'
 import { LocationContext } from 'contexts/LocationContext'
 import { LocationData } from '@shared/types'
 
 export default function Search () {
   const { setSelectedLocation } = useContext(LocationContext)
+  const navigate = useNavigate()
 
   const [searchInput, setSearchInput] = useState('')
   const [searchResults, setSearchResults] = useState<LocationData[]>([])
@@ -30,15 +31,20 @@ export default function Search () {
   }, [searchInput])
 
   function handleAddLocation (selectedLocation: LocationData) {
+    setSelectedLocation({ type: 'MANUAL', location: selectedLocation })
     console.log({ selectedLocation })
+
     const allSelectedLocation = JSON.parse(localStorage.getItem('selectedLocations') ?? '[]') as LocationData[]
 
-    allSelectedLocation.push(selectedLocation)
+    // Remember this location if it's not already saved
+    if (!allSelectedLocation.find(v => v.id === selectedLocation.id)) {
+      allSelectedLocation.push(selectedLocation)
+    }
 
     localStorage.setItem('selectedLocations', JSON.stringify(allSelectedLocation))
-    setSelectedLocation(selectedLocation)
+    // setSelectedLocation(selectedLocation)
 
-    window.location.href = '/location'
+    navigate('/')
   }
 
   return (

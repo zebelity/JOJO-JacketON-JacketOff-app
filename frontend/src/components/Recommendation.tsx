@@ -4,7 +4,7 @@ import './Recommendation.css'
 import { UserPreferences, useUserPreferences } from 'contexts/PreferenceContext'
 import { WeatherData } from '@shared/types'
 
-function getRecommendation (weather: WeatherData, userPreferences:UserPreferences): string {
+export function getRecommendation (weather: WeatherData, userPreferences:UserPreferences): string {
   const currentWeather = weather.current
   if (
     currentWeather.temp_c <= userPreferences.temperature ||
