@@ -15,5 +15,8 @@ app.use(cors())
 app.use(express.json())
 app.use('/', weatherRouter)
 app.use('/search', locationRouter)
+app.use('/ping', (req: express.Request, res: express.Response): void => {
+  res.json(req.headers)
+})
 
 app.listen(PORT, () => { console.log(`Server listening to port ${PORT}`) })
