@@ -9,6 +9,7 @@ export interface LocationContextType {
   // null means auto, undefined means no preference
   selectedLocation: LocationPreference | null;
   setSelectedLocation: (preference: LocationPreference) => void
+  clearSelectedLocation: () => void
 }
 
 interface LocationProviderProps {
@@ -17,7 +18,8 @@ interface LocationProviderProps {
 
 export const LocationContext = createContext<LocationContextType>({
   selectedLocation: null,
-  setSelectedLocation: () => {}
+  setSelectedLocation: () => {},
+  clearSelectedLocation: () => {}
 })
 
 export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) => {
@@ -49,9 +51,15 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
     localStorage.setItem('selectedLocation', JSON.stringify(preference))
   }
 
+  function clearSelectedLocation (): void {
+    _setSelectedLocation(null)
+    localStorage.removeItem('selectedLocation')
+  }
+
   const contextValue: LocationContextType = {
     selectedLocation,
-    setSelectedLocation
+    setSelectedLocation,
+    clearSelectedLocation
   }
 
   return (

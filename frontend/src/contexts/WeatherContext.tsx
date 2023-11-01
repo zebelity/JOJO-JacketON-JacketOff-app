@@ -34,13 +34,13 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
         // Don't send a location to backend
         // Backend will use the user's IP to detect location
         const result = await fetchWeather()
-        console.log({ selectedLocation, result })
+        console.log({ auto: selectedLocation, result })
         setWeather(result)
       } else {
         // User has selected a specific location
         // So we fetch weather for that location
         const result = await fetchWeather(selectedLocation.location)
-        console.log({ selectedLocation, result })
+        console.log({ select: selectedLocation, result })
         setWeather(result)
       }
     })().catch(err => { console.log(err) })

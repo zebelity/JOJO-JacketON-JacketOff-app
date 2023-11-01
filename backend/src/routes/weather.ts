@@ -15,7 +15,7 @@ router.get('/', (req: Request, res: Response) => {
   (async () => {
     // console.log(process.env.WEATHER_API_KEY)
     const userIpAddress = req.ip
-    const location = req.query.location;
+    const location = req.query.location
     // location = 'boston' //to test alert
     if (location === undefined) {
       // Use the user's IP address for IP lookup
@@ -58,38 +58,38 @@ router.get('/', (req: Request, res: Response) => {
   })
 })
 
-router.get('/today', async (req: Request, res: Response) => {
-  try {
+router.get('/today', (req: Request, res: Response) => {
+  (async () => {
     const userIpAddress = req.ip
 
-    let location = req.query.location;
+    const location = req.query.location
 
     if (location === undefined) {
       const response = await axios.get('https://api.weatherapi.com/v1/astronomy.json', {
         params: {
           key: process.env.WEATHER_API_KEY,
-          q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress, // auto:ip is for local dev 
-        },
-      });
-      const weatherData = response.data;
-      console.log({ weatherData });
-      return res.json(weatherData);
+          q: isLocalIp(userIpAddress) ? 'auto:ip' : userIpAddress // auto:ip is for local dev
+        }
+      })
+      const weatherData = response.data as WeatherData
+      console.log({ weatherData })
+      return res.json(weatherData)
     }
 
     const response = await axios.get('https://api.weatherapi.com/v1/astronomy.json', {
-      params: { 
+      params: {
         key: process.env.WEATHER_API_KEY,
-        q: location,
-      },
-    });
+        q: location
+      }
+    })
 
-    const weatherData = response.data;
-    console.log({ weatherData });
-    return res.json(weatherData);
-  } catch (error) {
-    console.error((error as Error).message);
-    res.status(500).json({ error: 'An error occurred while fetching weather data.' });
-  }
+    const weatherData = response.data as WeatherData
+    console.log({ weatherData })
+    res.json(weatherData)
+  })().catch(error => {
+    console.error((error as Error).message)
+    res.status(500).json({ error: 'An error occurred while fetching weather data.' })
+  })
 })
 
 export const weatherRouter = router

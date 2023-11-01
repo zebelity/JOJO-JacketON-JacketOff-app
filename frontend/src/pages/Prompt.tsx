@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState, useCallback } from 'react'
 import { LocationContext } from 'contexts/LocationContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,14 +7,14 @@ export default function Prompt () {
   const [locationPermission, setLocationPermission] = useState<PermissionState | null>(null)
   const navigate = useNavigate()
 
-  const saveAutoDetect = () => {
+  const saveAutoDetect = useCallback(() => {
     setSelectedLocation({ type: 'AUTO_DETECT' })
     navigate('/')
-  }
+  }, [setSelectedLocation, navigate])
 
-  const gotoSearch = () => {
+  const gotoSearch = useCallback(() => {
     navigate('/search')
-  }
+  }, [navigate])
 
   useEffect(() => {
     // If we don't know what the permission is, query it
@@ -36,7 +36,7 @@ export default function Prompt () {
           console.error('Error querying geolocation permission:', error.message)
         })
     }
-  }, [locationPermission, setSelectedLocation, navigate])
+  }, [locationPermission, setSelectedLocation, navigate, gotoSearch, saveAutoDetect])
 
   const requestLocationPermission = () => {
     navigator.geolocation.getCurrentPosition(

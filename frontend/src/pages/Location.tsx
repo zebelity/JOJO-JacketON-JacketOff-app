@@ -1,22 +1,22 @@
 import './Location.css'
 import { useContext, useState, useEffect } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
-import { LocationContext } from 'contexts/LocationContext'
-import { fetchWeather } from 'api.ts'
+import { LocationContext, LocationPreference } from 'contexts/LocationContext'
 import { Link } from 'react-router-dom'
-import { LocationData, WeatherData } from '@shared/types'
+import { LocationData } from '@shared/types'
 
 export default function Location () {
   const { weather } = useContext(WeatherContext)
-  const { selectedLocation, setSelectedLocation } = useContext(LocationContext) // Get the selected location from the context
+  const { selectedLocation, setSelectedLocation, clearSelectedLocation } = useContext(LocationContext) // Get the selected location from the context
   const [selectedLocations, setSelectedLocations] = useState<LocationData[]>([])
 
   const location = weather?.location
+  console.log({ location })
 
   useEffect(() => {
     const storedLocations = JSON.parse(localStorage.getItem('selectedLocations') ?? '[]') as LocationData[]
     setSelectedLocations(storedLocations)
-  }, [])
+  }, [location])
 
   function handleDeleteLocation (index: number) {
     const updatedLocations = [...selectedLocations]
@@ -26,8 +26,16 @@ export default function Location () {
     localStorage.setItem('selectedLocations', JSON.stringify(updatedLocations))
   }
 
-  function handleSelectLocation (location: LocationData) {
-    setSelectedLocation(location)
+  function handleSelectLocation (location: LocationData | 'CURRENT') {
+    if (location === 'CURRENT') {
+      setSelectedLocation({ type: 'AUTO_DETECT' })
+    } else {
+      const locationPreference: LocationPreference = {
+        type: 'MANUAL',
+        location
+      }
+      setSelectedLocation(locationPreference)
+    }
     window.location.href = '/'
   }
 
@@ -48,11 +56,19 @@ export default function Location () {
       </div>
       <div className="info-location">
         <div className="location-card">
-          <div className="location-icon">
+          <div className="location-icon" onClick={clearSelectedLocation}>
             <img src="/location.png" alt="location" />
           </div>
-          <p>{location?.name} - {location?.country}</p>
+          {selectedLocation?.type === 'AUTO_DETECT'
+            ? (
+              <p>Current Location: {location?.name} - {location?.country}</p>
+              )
+            : (
+              <p>Current Selection: {selectedLocation?.location.name} - {selectedLocation?.location.country}</p>
+              )
+            }
         </div>
+
         {selectedLocations.map((locationItem, index) => (
           <div className="location-card" key={index}>
             <p onClick={() => { handleSelectLocation(locationItem) }} >{locationItem.name} - {locationItem.country}</p>

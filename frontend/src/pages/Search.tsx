@@ -28,7 +28,7 @@ export default function Search () {
     } else {
       setSearchResults([])
     }
-  }, [searchInput])
+  }, [searchInput, error])
 
   function handleAddLocation (selectedLocation: LocationData) {
     setSelectedLocation({ type: 'MANUAL', location: selectedLocation })
@@ -37,7 +37,7 @@ export default function Search () {
     const allSelectedLocation = JSON.parse(localStorage.getItem('selectedLocations') ?? '[]') as LocationData[]
 
     // Remember this location if it's not already saved
-    if (!allSelectedLocation.find(v => v.id === selectedLocation.id)) {
+    if (!allSelectedLocation.find(location => location.id === selectedLocation.id)) {
       allSelectedLocation.push(selectedLocation)
     }
 

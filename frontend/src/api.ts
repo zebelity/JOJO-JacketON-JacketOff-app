@@ -8,7 +8,6 @@ export async function fetchWeather (location?: LocationData): Promise<WeatherDat
     // Append location to the URL if provided
     url += `?location=${encodeURIComponent(location.name)}` // Using encodeURIComponent to safely pass the location string in the URL
   }
-  console.log({ location })
   const response = await fetch(url)
 
   if (!response.ok) {

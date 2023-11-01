@@ -1,13 +1,11 @@
 import './Setting.css'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SettingOption from 'components/SettingOption'
-import { LocationContext } from 'contexts/LocationContext'
 // import { useNotification } from 'contexts/NotificationContext'
 
 export default function Setting () {
   const [showOption, setShowOption] = useState(false)
-  const { locationPermission } = useContext(LocationContext)
 
   // const { permissionStatus } = useNotification()
   // const [notificationOption, setNotificationOption] = useState(permissionStatus === 'granted')
@@ -16,10 +14,6 @@ export default function Setting () {
 
   function togglePreferenceOption () {
     setShowOption(!showOption)
-  }
-
-  function showLocationPermission () {
-    return locationPermission === 'granted' ? 'ON' : 'OFF'
   }
 
   // const toggleNotificationOption = async () => {
@@ -99,13 +93,13 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/bell.png" alt="bell" />
             </div>
-            {/* <p>Notifications: { notificationOption ? 'ON' : 'OFF'}</p> */}
+            <p>Notifications</p>
           </div>
           <div className="set-info">
             <div className="setting-icon">
               <img src="/location.png" alt="setting" />
             </div>
-            <p>Use Current Location: { showLocationPermission() } </p>
+            <p>Use Current Location </p>
           </div>
         </div>
         </>
