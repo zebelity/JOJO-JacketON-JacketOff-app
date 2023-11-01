@@ -14,7 +14,7 @@ function isLocalIp (ip: string): boolean {
 router.get('/', (req: Request, res: Response) => {
   (async () => {
     // console.log(process.env.WEATHER_API_KEY)
-    const userIpAddress = req.ip
+    const userIpAddress = (req.headers['true-client-ip'] ?? req.ip) as string
     const location = req.query.location
     // location = 'boston' //to test alert
     if (location === undefined) {
@@ -60,7 +60,7 @@ router.get('/', (req: Request, res: Response) => {
 
 router.get('/today', (req: Request, res: Response) => {
   (async () => {
-    const userIpAddress = req.ip
+    const userIpAddress = (req.headers['true-client-ip'] ?? req.ip) as string
 
     const location = req.query.location
 
