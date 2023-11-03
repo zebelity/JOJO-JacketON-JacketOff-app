@@ -34,7 +34,6 @@ export default function CurrentWeather () {
               </div>
               <p>{currentWeather?.wind_mph} km/h</p>
             </div>
-
           </div>
         </div>
           )

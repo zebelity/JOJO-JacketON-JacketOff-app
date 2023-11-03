@@ -1,7 +1,12 @@
 .forecast-weather {
   display: flex;
   justify-content: space-between; 
-  align-items: center; /* Center the content vertically */
+	align-items: center;
+  padding: 20px 5px 20px 5px;
+	border-radius: 15px;
+	overflow: hidden;
+	border: 3px solid #ffffff;
+	box-shadow: 0 8px 10px -4px rgba(#000, 0.2);
 }
 .forecast-card img {
   max-width: 100%;
@@ -9,7 +14,27 @@
 
 /* Style each forecast card */
 .forecast-card {
-  text-align: center;
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 14px;
+		background-color: transparent;
+		z-index: -1;
+		bottom: -2px;
+		left: 0;
+		transition: 0.15s ease;
+	}
+
+	&:hover:before,
+	&:focus {
+		background-color: var(--c-yellow-500);
+    opacity: 0.5;
+	}
 }
 
 @media (max-width: 500px) {

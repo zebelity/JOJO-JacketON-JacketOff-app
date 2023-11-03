@@ -19,19 +19,20 @@ export default function Homepage () {
           <div className='logo'>
             <img src="/logo.png" alt="logo" />
           </div>
+          <h1>JOJO App</h1>
           {shouldShowAlertIcon && (
-            <Link to="/alert">
-            <div className='alert-icon'>
-              <button className='aleart-btn'>
-                <img src="/alert.png" alt="alert" />
-              </button>
-            </div>
-            </Link>
+        <Link to="/alert">
+          <div className='alert-icon'>
+            <button className='aleart-btn'>
+              <i></i>
+              <img src="/alert.png" alt="alert" />
+            </button>
+          </div>
+        </Link>
           )}
         </header>
       </section>
 
-      <h1>JOJO App</h1>
       <div className='content'>
         < CurrentWeather/>
         < Recommendation/>

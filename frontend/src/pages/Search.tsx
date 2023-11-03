@@ -57,17 +57,18 @@ export default function Search () {
         </Link>
         <h2>Search</h2>
       </div>
-      <div className="search-input">
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search for a location..."
-            value={searchInput}
-            onChange={handleSearchInputChange}
-          />
-        </div>
-        <div className="search-icon">
-          <img src="/search.png" alt="search" />
+      <div className="search-box">
+        <div className="search-inner">
+          <div className="search-icon">
+            <img src="/search.png" alt="search" />
+          </div>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search for a location..."
+              value={searchInput}
+              onChange={handleSearchInputChange}
+            />
         </div>
       </div>
       <div className="search-result">
