@@ -29,6 +29,10 @@
   --rotation: -3deg;
 }
 
+body {
+  background-image: url('/background.webp');
+}
+
 body, .global {
   margin: 0;
   display: flex;
@@ -36,15 +40,16 @@ body, .global {
   max-width: 1200px;
   min-width: 300px;
   min-height: 100vh;
-  background-image: url('/background.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #dcd3d3;
   font-family: 'Urbanist', sans-serif;
   line-height: 1.5;
-  padding-top: 3vw;
-  padding-bottom: 3vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start;
 }
 
 img {

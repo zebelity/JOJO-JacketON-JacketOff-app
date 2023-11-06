@@ -75,3 +75,20 @@ a {
 }
 
 
+@media (max-width: 500px) {
+	h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+	h1 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 769px){
+	h1 {
+		font-size: 60px;
+	}
+}

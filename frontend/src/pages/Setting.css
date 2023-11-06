@@ -5,15 +5,6 @@
   padding: 2rem;
 }
 
-.wraptop-today {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
-
 .setting-card {
   margin-bottom: 20px;
   backdrop-filter: blur(5px);
@@ -67,16 +58,9 @@ select {
 }
 
 @media (max-width: 500px) {
-  .smartphone .wraptop-today {
-    width: 90%;
+  .smartphone .setting-card {
+    width: 400px;
     margin: 0 auto;
-  }
-  .wraptop-today h2{
-    font-size: 20px;
-  }
-  .home-icon img {
-    margin-right: 10px;
-    margin-left: 5px;
   }
   .setting-card h3 {
     font-size: 16px;
@@ -84,23 +68,12 @@ select {
   .setting-card p {
     font-size: 14px;
   }
-  .setting-card {
-    width: 90%;
-    margin: 15px auto;
-  }
 }
 
 @media (min-width: 501px) and (max-width: 768px) {
-  .tablet .wraptop-today .setting-card{
-    width: 85%;
+  .tablet .setting-card{
+    width: 500px;
     margin: 0 auto;
-  }
-  .wraptop-today h2{
-    font-size: 25px;
-  }
-  .home-icon img {
-    margin-right: 15px;
-    margin-left: 10px;
   }
   .setting-card h3 {
     font-size: 18px;
@@ -110,16 +83,9 @@ select {
   }
 }
 @media (min-width: 769px){
-  .normal .wraptop-today .setting-card{
-    width: 75%;
+  .normal .setting-card{
+    width: 650px;
     margin: 0 auto;
-  }
-  .wraptop-today h2{
-    font-size: 30px;
-  }
-  .home-icon img {
-    margin-right: 20px;
-    margin-left: 10px;
   }
   .setting-card h3 {
     font-size: 20px;
