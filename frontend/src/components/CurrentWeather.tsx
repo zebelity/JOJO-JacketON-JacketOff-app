@@ -8,13 +8,10 @@ export default function CurrentWeather () {
   const currentWeather = weather?.current
 
   return (
-    <div className='weather-section current-weather'>
+    <div className='smartphone tablet normal'>
       {weather
         ? (
-        <div>
-          <img className='mainicon' src={currentWeather?.condition.icon} alt="icon" />
-          <h2> {weather.location.name} </h2>
-          <p> {currentWeather?.condition.text} </p>
+        <div className='weather-section'>
           <div className='weather-wrap'>
             <div className='wrap-icon'>
               <div className='icon-container'>

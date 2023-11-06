@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between; 
 	align-items: center;
-  padding: 20px 5px 20px 5px;
+  padding: 10px 5px 10px 5px;
 	border-radius: 15px;
 	overflow: hidden;
 	border: 3px solid #ffffff;
@@ -43,7 +43,7 @@
   }
   .forecast-card p {
     margin: 5px 0;
-    font-size: 16px;
+    font-size: 0.75rem;
   }
 }
 
@@ -54,7 +54,7 @@
   
   .forecast-card p {
     margin: 6px 0;
-    font-size: 18px;
+    font-size: 1rem;
   }
 
 }
@@ -66,6 +66,6 @@
   
   .forecast-card p {
     margin: 8px 0;
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 }

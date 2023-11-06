@@ -47,7 +47,6 @@ export default function SettingOption (props: {
       </div>
       <div className="setting-box">
         <h3>Preferences</h3>
-        <p>Enter your answer below</p>
         <div className="question-box">
           <p>What’s temperature which you might need a jacket?</p>
           <button type="button" onClick={() => { setTemperature(temperature - 1) }}

@@ -104,12 +104,6 @@
 	}
 }
 
-
-/* .search-input input{
-  width: 100%;
-  padding: 5px;
-} */
-
 .search-result ul {
   list-style: none;
   padding-left: 0;
@@ -119,6 +113,11 @@
   text-align: left;
   border-bottom: solid 1px black;
   padding: 10px;
+}
+
+.search-result li:hover {
+  background-color: #F5CCCC;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {

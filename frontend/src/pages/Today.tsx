@@ -58,39 +58,39 @@ export default function Today () {
         <div className='astro-data'>
           <div className='sunrise-card'>
             <h3>Sunrise</h3>
-            <p>{todayAstro?.astronomy.astro.sunrise}</p>
             <div className='astro-icon'>
               <img src="/sunrise.png" alt="sunrise" />
             </div>
+            <p>{todayAstro?.astronomy.astro.sunrise}</p>
           </div>
           <div className='sunset-card'>
             <h3>Sunset</h3>
-            <p>{todayAstro?.astronomy.astro.sunset}</p>
             <div className='astro-icon'>
               <img src="/sunset.png" alt="sunset" />
             </div>
+            <p>{todayAstro?.astronomy.astro.sunset}</p>
           </div>
         </div>
         <div className='info-data'>
           <div className='info-card'>
+              <h3>UV Index</h3>
               <div className='info-icon'>
                 <img src="/uvindex.png" alt="uv" />
               </div>
-              <h3>UV Index</h3>
               <p>{uvIndex}</p>
           </div>
           <div className='info-card'>
+              <h3>Humidity</h3>
               <div className='info-icon'>
                 <img src="/humidity.png" alt="humidity" />
               </div>
-              <h3>Humidity</h3>
               <p>{currentWeather?.humidity}</p>
           </div>
           <div className='info-card'>
+              <h3>Wind</h3>
               <div className='info-icon'>
                 <img src="/wind2.png" alt="wind" />
               </div>
-              <h3>Wind</h3>
               <p>{currentWeather?.wind_mph} km/h</p>
           </div>
         </div>

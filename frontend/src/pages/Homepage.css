@@ -2,7 +2,6 @@
   display: grid;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 1.5rem;
 	grid-template-columns: 1fr 2fr 1fr;
 }
 
@@ -63,8 +62,6 @@ a {
 }
 
 .footer-content {
-  margin-top: 2rem;
-	padding-bottom: 0.75rem;
 	display: flex;
 	justify-content: space-between;
 }

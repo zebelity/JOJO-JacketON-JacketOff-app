@@ -5,11 +5,11 @@
 
 .wraptop-today {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  background-color: #d3d3d3;
-  margin-top: 0;
-  padding: 0px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .alert-content {

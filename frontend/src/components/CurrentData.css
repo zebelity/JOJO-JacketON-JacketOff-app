@@ -1,0 +1,19 @@
+.mainicon {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.current-weather h2 {
+  margin: 0;
+	font-weight: 700;
+}
+
+.current-weather p {
+  margin-bottom: 0.75rem;
+}

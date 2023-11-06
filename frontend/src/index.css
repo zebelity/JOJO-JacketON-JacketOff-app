@@ -32,8 +32,10 @@
 body {
   margin: 0;
   display: flex;
+  width: 100%;   /* takes up the whole width of its container */
+  max-width: 1200px;
   /* place-items: center; */
-  min-width: 320px;
+  min-width: 300px;
   min-height: 100vh;
   background-image: url('/background.webp');
   background-size: cover;
@@ -46,7 +48,12 @@ body {
   padding-bottom: 3vw;
 }
 
-@media (prefers-color-scheme: light) {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: dark) {
   :root {
     color: #213547;
     background-color: #ffffff;

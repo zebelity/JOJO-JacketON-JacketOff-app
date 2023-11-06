@@ -1,7 +1,8 @@
 .recommendation-section {
   display: flex;
-  flex-direction: column;
-  text-align: center; 
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem;
 }
 .recommendation-section p {
   margin-top: 30px;
@@ -12,24 +13,119 @@
 
 .jacket-icon {
   height: 100%;
-  margin-bottom: 20px;
 }
+
+.card {
+	transform: rotate(var(--rotation));
+	transition: 0.15s ease-out;
+
+	&:hover,
+	&:focus-within {
+		transform: translateY(4px) rotate(var(--rotation));
+
+		.card-inner {
+			background-color: var(--c-gray-100);
+		}
+		.card-pin:after {
+			height: 54px;
+		}
+		.card-pin:before {
+			transform: translatey(-4px);
+		}
+	}
+}
+
+.card-inner {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid var(--c-gray-900);
+	border-radius: 20px;
+	padding: 0.5rem;
+	background-color: #fff;
+	position: relative;
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: -1;
+		width: 95%;
+		height: 100%;
+		bottom: -9px;
+		left: calc(50% - 47.5%);
+		border-radius: 20px;
+		border: 2px solid var(--c-gray-900);
+		background-color: var(--c-yellow-300);
+	}
+}
+
+.card-pin {
+	width: 12px;
+	height: 12px;
+	background-color: var(--c-gray-900);
+	position: absolute;
+	top: 20px;
+	left: calc(50% - 6px);
+	border-radius: 50%;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--c-gray-900);
+	transform: rotate(3deg);
+	z-index: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		border-radius: 50%;
+		position: absolute;
+		transition: 0.15s ease-out;
+	}
+
+	&:before {
+		width: 12px;
+		height: 12px;
+		background-color: var(--c-gray-900);
+		border-radius: 50%;
+		left: calc(50% - 6px);
+		top: -44px;
+	}
+
+	&:after {
+		width: 6px;
+		background-color: #fff;
+		border: 1px solid;
+		border-radius: 99em;
+		height: 50px;
+		left: calc(50% - 3px);
+		bottom: 3px;
+	}
+	
+}
+
 
 @media (max-width: 500px) {
   .smartphone .recommendation-section p {
     font-size: 24px; 
   }
-  .recommendation-section img {
-    max-width: 70%;
+  .card {
+    max-width: 50%;
   }
+	.card-pin {
+		width: 6px;
+		height: 6px;
+		&:before {
+			width: 11px;
+		}
+		&::after {
+			width: 4px;
+			height: 40px;
+		}
+	}
 }
 
 @media (min-width: 501px) and (max-width: 768px) {
   .tablet .recommendation-section p {
     font-size: 28px;
   }
-  .recommendation-section img {
-    max-width: 80%;
+  .card {
+    max-width: 60%;
   }
 }
 
@@ -37,7 +133,7 @@
   .normal .recommendation-section p {
     font-size: 32px; 
   }
-  .recommendation-section img {
-    max-width: 90%;
+  .card{
+    max-width: 70%;
   }
 }

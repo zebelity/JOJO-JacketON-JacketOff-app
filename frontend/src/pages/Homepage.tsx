@@ -5,6 +5,7 @@ import Recommendation from 'components/Recommendation'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { WeatherContext } from 'contexts/WeatherContext'
+import CurrentData from 'components/CurrentData'
 
 export default function Homepage () {
   const { weather } = useContext(WeatherContext)
@@ -34,8 +35,9 @@ export default function Homepage () {
       </section>
 
       <div className='content'>
-        < CurrentWeather/>
+        < CurrentData/>
         < Recommendation/>
+        < CurrentWeather/>
         < ForecastWeather/>
         <section className='footer-content'>
           <Link to="/location">

@@ -30,16 +30,24 @@ export default function Recommendation () {
 
   return (
     <section className='recommendation-section'>
-      <p>{recommendation}</p>
-      <div className='jacket-icon'>
-         {recommendation === 'Jacket ON'
-           ? (
-        <img src="/jacket.png" alt="jacket-on" />
-             )
-           : (
-        <img src="/shirt.png" alt="jacket-off" />
-             )}
-      </div>
+      <article className='card'>
+        <div className='card-inner'>
+          <span className="card-pin"></span>
+          <div className='jacket-icon'>
+          {recommendation === 'Jacket ON'
+            ? (
+          <img src="/jacket.png" alt="jacket-on" />
+              )
+            : (
+          <img src="/shirt.png" alt="jacket-off" />
+              )}
+          </div>
+          <div className='card-content'>
+              <span>Recommendation</span>
+            <p>{recommendation}</p>
+          </div>
+        </div>
+      </article>
     </section>
   )
 }
