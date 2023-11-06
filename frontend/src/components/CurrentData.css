@@ -16,4 +16,5 @@
 
 .current-weather p {
   margin-bottom: 0.75rem;
+  font-weight: 600;
 }

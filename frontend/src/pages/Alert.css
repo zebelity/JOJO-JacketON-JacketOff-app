@@ -1,6 +1,7 @@
 .alert-section {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .wraptop-today {
@@ -16,6 +17,9 @@
   align-items: center;
 }
 
+.home-icon img {
+  width: 40px;
+}
 @media (max-width: 500px) {
   .smartphone .wraptop-today {
     width: 400px;
@@ -24,7 +28,6 @@
     font-size: 20px;
   }
   .home-icon img {
-    width: 20px;
     margin-right: 10px;
     margin-left: 5px;
   }
@@ -47,7 +50,6 @@
     font-size: 25px;
   }
   .home-icon img  {
-    width: 30px;
     margin-right: 15px;
     margin-left: 10px;
   }
@@ -69,7 +71,6 @@
     font-size: 30px;
   }
   .home-icon img {
-    width: 40px;
     margin-right: 20px;
     margin-left: 10px;
   }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 2rem;
 }
 
 .wraptop-today {
@@ -98,6 +99,7 @@
   .today-data p {
     font-size: 18px;
   }
+  
 }
 @media (min-width: 769px){
   .normal .today-section {

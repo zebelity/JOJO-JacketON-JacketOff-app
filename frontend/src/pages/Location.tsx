@@ -40,7 +40,7 @@ export default function Location () {
   }
 
   return (
-    <section className="location-section smartphone tablet normal">
+    <section className="global location-section smartphone tablet normal">
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">

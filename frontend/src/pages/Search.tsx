@@ -48,7 +48,7 @@ export default function Search () {
   }
 
   return (
-    <section className='search-section smartphone tablet normal'>
+    <section className='global search-section smartphone tablet normal'>
       <div className="wraptop-today">
         <Link to="/location">
         <div className="back-icon">

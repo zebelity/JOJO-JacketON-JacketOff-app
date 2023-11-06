@@ -29,18 +29,17 @@
   --rotation: -3deg;
 }
 
-body {
+body, .global {
   margin: 0;
   display: flex;
-  width: 100%;   /* takes up the whole width of its container */
+  width: 100%;
   max-width: 1200px;
-  /* place-items: center; */
   min-width: 300px;
   min-height: 100vh;
   background-image: url('/background.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; /* Center the image */
+  background-position: center;
   background-color: #dcd3d3;
   font-family: 'Urbanist', sans-serif;
   line-height: 1.5;

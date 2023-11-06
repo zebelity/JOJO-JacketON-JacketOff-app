@@ -31,8 +31,7 @@ export default function Today () {
   const uvIndex = Number(currentWeather?.uv).toFixed(1)
 
   return (
-    <div className='smartphone tablet normal'>
-    <section className="today-section">
+    <section className="global today-section smartphone tablet normal">
       <div className="wraptop-today">
         <Link to="/">
         <div className="home-icon">
@@ -100,6 +99,5 @@ export default function Today () {
         : <p className='code'>Loading weather data...</p>}
       </section>
     </section>
-    </div>
   )
 }

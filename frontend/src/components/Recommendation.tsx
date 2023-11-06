@@ -43,7 +43,6 @@ export default function Recommendation () {
               )}
           </div>
           <div className='card-content'>
-              <span>Recommendation</span>
             <p>{recommendation}</p>
           </div>
         </div>
