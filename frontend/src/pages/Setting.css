@@ -59,7 +59,7 @@ select {
 
 @media (max-width: 500px) {
   .smartphone .setting-card {
-    width: 400px;
+    width: 360px;
     margin: 0 auto;
   }
   .setting-card h3 {

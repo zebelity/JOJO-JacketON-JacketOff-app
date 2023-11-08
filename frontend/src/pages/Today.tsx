@@ -72,7 +72,7 @@ export default function Today () {
         </div>
         <div className='info-data'>
           <div className='info-card'>
-              <h3>UV Index</h3>
+              <h3>UV</h3>
               <div className='info-icon'>
                 <img src="/uvindex.png" alt="uv" />
               </div>

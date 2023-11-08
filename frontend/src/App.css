@@ -1,5 +1,4 @@
 * {
-  /* border: solid 1px green; */
   box-sizing: border-box;
 }
 
@@ -23,7 +22,7 @@
 
 @media (max-width: 500px) {
   .smartphone .wraptop-today {
-    width: 400px;
+    width: 360px;
   }
   .wraptop-today h2{
     font-size: 20px;
