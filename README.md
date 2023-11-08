@@ -19,6 +19,10 @@ JOJO is designed to make the decision of wearing a jacket as easy as possible. I
 ### Homepage
 <img width="1328" alt="image" src="frontend/public/homepage.png">
 
+### Manage Location and Search
+<img width="1328" alt="image" src="frontend/public/manage_location.png">
+<img width="1328" alt="image" src="frontend/public/search_location.png">
+
 ### Today-forecast
 <img width="1328" alt="image" src="frontend/public/todayweather.png">
 
@@ -26,6 +30,9 @@ JOJO is designed to make the decision of wearing a jacket as easy as possible. I
 <img width="1328" alt="image" src="frontend/public/preferences.png">
 
 - Retrieve current weather data for the user's location.
+- Request location permissions if using the current location.
+- Allow users to enter a location or use their current location to obtain weather data.
+- Allow users to modify their location.
 - Allow users to modify their preferences in setting.
 - Options for preferences include temperature, humidity, wind speed values.
 - Store user preferences locally.
@@ -39,9 +46,6 @@ JOJO is designed to make the decision of wearing a jacket as easy as possible. I
 
 ## Future Enhancements
 
-- Allow users to enter a location or use their current location to obtain weather data.
-- Request location permissions if using the current location.
-- Allow users to modify their location.
 - Use web notifications API for push notifications.
 - Provide user-friendly location and error messages.
 - Display clear error messages if the weather API is unavailable.
