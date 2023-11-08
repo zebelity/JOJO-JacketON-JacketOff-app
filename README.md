@@ -9,6 +9,7 @@ Try now [Demo](https://jojo-frontend.onrender.com)
 - [Technologies Used](#technologies-used)
 - [Future Enhancements](#Future-Enhancements)
 - [Activities](#activities)
+- [License](#license)
 
 ## Overview
 
@@ -80,3 +81,6 @@ JOJO is designed to make the decision of wearing a jacket as easy as possible. I
 - API Integration: Implement APIs for weather data.
 - Frontend Development: Build the application frontend and connect it to the API.
 - User Input Forms: Create forms for user input.
+
+## License
+Distributed under the MIT License. 

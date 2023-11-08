@@ -1,21 +1,21 @@
 import './Setting.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SettingOption from 'components/SettingOption'
 
 export default function Setting () {
   const [showOption, setShowOption] = useState(false)
-  const [locationPermission, setLocationPermission] = useState<PermissionState | null>(null)
+  // const [locationPermission, setLocationPermission] = useState<PermissionState | null>(null)
 
-  useEffect(() => {
-    navigator.permissions.query({ name: 'geolocation' })
-      .then((result) => {
-        setLocationPermission(result.state)
-      })
-      .catch((error) => {
-        console.error('Error checking geolocation permission:', error)
-      })
-  }, [])
+  // useEffect(() => {
+  //   navigator.permissions.query({ name: 'geolocation' })
+  //     .then((result) => {
+  //       setLocationPermission(result.state)
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error checking geolocation permission:', error)
+  //     })
+  // }, [])
 
   function togglePreferenceOption () {
     setShowOption(!showOption)
@@ -66,7 +66,7 @@ export default function Setting () {
             <div className="setting-icon">
               <img src="/location.png" alt="setting" />
             </div>
-            <p>Use Current Location: {locationPermission === 'granted' ? 'On' : 'Off'} </p>
+            <p>Use Current Location</p>
           </div>
         </div>
         </>
